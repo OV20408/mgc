@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Clientes - MCG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <div class="page-transition-loader">
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.png" alt="MCG - Mentoría & Consulting Group">
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="quienes-somos.html">QUIENES SOMOS</a></li>
+                    <li class="dropdown">
+                        <a href="servicios.html">SERVICIOS <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="capacitacion.html">Capacitación</a></li>
+                            <li><a href="consultoria.html">Consultoría</a></li>
+                            <li><a href="soporte-admin-operativo.html">Soporte Administrativo y Operativo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="clientes.html" class="active">CLIENTES</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            <div class="cta-header">
+                <a href="contacto.html" class="btn btn-primary">Contáctanos</a>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero-background">
+                <img src="img/clients-hero.png" alt="Nuestros Clientes">
+            </div>
+            <div class="page-hero-content">
+                <div class="container">
+                    <h1>Nuestros Clientes y Experiencia</h1>
+                    <p>Confianza construida a través de años de excelencia en servicios especializados</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="clients-section">
+            <div class="container">
+                <h2 style="text-align: center; color: var(--azul-oscuro); margin-bottom: 1rem;">Empresas con las que hemos trabajado</h2>
+                <p class="clients-intro">
+                    Nuestro equipo directivo ha colaborado con importantes empresas del sector energético, 
+                    aportando su experiencia en QHSE&RSE y contribuyendo al desarrollo sostenible de sus operaciones.
+                </p>
+                
+                <div class="clients-grid">
+                    <div class="client-card" onclick="openModal('petrobras-bolivia-modal')">
+                        <img src="img/petrobras-bolivia-logo.png" alt="Petrobras Bolivia">
+                        <h3>Petrobras Bolivia</h3>
+                        <p>Colaboración en gestión QHSE&RSE</p>
+                    </div>
+                    
+                    <div class="client-card" onclick="openModal('petrobras-argentina-modal')">
+                        <img src="img/petrobras-argentina-logo.png" alt="Petrobras Argentina">
+                        <h3>Petrobras Argentina</h3>
+                        <p>Servicios de consultoría especializada</p>
+                    </div>
+                    
+                    <div class="client-card" onclick="openModal('ypfb-andina-modal')">
+                        <img src="img/ypfb-andina-logo.png" alt="YPFB Andina">
+                        <h3>YPFB Andina</h3>
+                        <p>Capacitación y soporte técnico</p>
+                    </div>
+                    
+                    <div class="client-card" onclick="openModal('empresa-bolivia-1-modal')">
+                        <img src="img/empresa-bolivia-1-logo.png" alt="Empresa Bolivia 1">
+                        <h3>Empresa Boliviana 1</h3>
+                        <p>Servicios de capacitación</p>
+                    </div>
+                    
+                    <div class="client-card" onclick="openModal('empresa-bolivia-2-modal')">
+                        <img src="img/empresa-bolivia-2-logo.png" alt="Empresa Bolivia 2">
+                        <h3>Empresa Boliviana 2</h3>
+                        <p>Consultoría en RSE</p>
+                    </div>
+                    
+                    <div class="client-card" onclick="openModal('empresa-bolivia-3-modal')">
+                        <img src="img/empresa-bolivia-3-logo.png" alt="Empresa Bolivia 3">
+                        <h3>Empresa Boliviana 3</h3>
+                        <p>Soporte administrativo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modales mejorados -->
+    <div id="petrobras-bolivia-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('petrobras-bolivia-modal')">&times;</span>
+            <div class="modal-body">
+                <div class="modal-info">
+                    <h2>Petrobras Bolivia</h2>
+                    <div class="info-section">
+                        <strong>Descripción</strong>
+                        <p>Importante empresa petrolera brasileña con operaciones en Bolivia, líder en exploración y producción de hidrocarburos.</p>
+                    </div>
+                    <div class="info-section">
+                        <strong>Servicios Prestados</strong>
+                        <div class="tags-container">
+                            <span class="tag service-tag">Capacitación en QHSE</span>
+                            <span class="tag service-tag">Consultoría en Gestión de Riesgos</span>
+                            <span class="tag service-tag">Soporte en Relacionamiento Comunitario</span>
+                            <span class="tag service-tag">Desarrollo de Sistemas de Gestión Ambiental</span>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <strong>Período de Colaboración</strong>
+                        <div class="tags-container">
+                            <span class="tag duration-tag">+25 años de experiencia en el sector</span>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <strong>Resultados</strong>
+                        <div class="tags-container">
+                            <span class="tag result-tag">Mejora en indicadores de seguridad</span>
+                            <span class="tag result-tag">Implementación exitosa de programas de RSE</span>
+                            <span class="tag result-tag">Fortalecimiento del relacionamiento comunitario</span>
+                            <span class="tag result-tag">Optimización de procesos operativos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-gallery">
+                    <div class="main-image" onclick="toggleZoom(this)">
+                        <img src="img/project1.jpg" alt="Proyecto con Petrobras Bolivia" id="main-petrobras">
+                    </div>
+                    <div class="thumbnails">
+                        <div class="thumbnail active" onclick="changeImage('main-petrobras', 'img/project1.jpg', this)">
+                            <img src="img/project1.jpg" alt="Thumbnail 1">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('main-petrobras', 'img/project2.jpg', this)">
+                            <img src="img/project2.jpg" alt="Thumbnail 2">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('main-petrobras', 'img/project3.jpg', this)">
+                            <img src="img/project3.jpg" alt="Thumbnail 3">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('main-petrobras', 'img/project4.jpg', this)">
+                            <img src="img/project4.jpg" alt="Thumbnail 4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="petrobras-argentina-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('petrobras-argentina-modal')">&times;</span>
+            <div class="modal-body">
+                <div class="modal-info">
+                    <h2>Petrobras Argentina</h2>
+                    <div class="info-section">
+                        <strong>Descripción</strong>
+                        <p>Filial argentina de Petrobras con importantes operaciones en el país, especializada en refinación y comercialización de derivados del petróleo.</p>
+                    </div>
+                    <div class="info-section">
+                        <strong>Servicios Prestados</strong>
+                        <div class="tags-container">
+                            <span class="tag service-tag">Consultoría en Gobierno Corporativo</span>
+                            <span class="tag service-tag">Gestión de Proyectos PMI</span>
+                            <span class="tag service-tag">Capacitación en Normas ISO</span>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <strong>Período de Colaboración</strong>
+                        <div class="tags-container">
+                            <span class="tag duration-tag">Colaboración estratégica</span>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <strong>Resultados</strong>
+                        <div class="tags-container">
+                            <span class="tag result-tag">Optimización de procesos operativos</span>
+                            <span class="tag result-tag">Mejora en gestión de proyectos</span>
+                            <span class="tag result-tag">Fortalecimiento de gobierno corporativo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-gallery">
+                    <div class="main-image" onclick="toggleZoom(this)">
+                        <img src="img/project2.jpg" alt="Proyecto con Petrobras Argentina" id="main-petrobras-arg">
+                    </div>
+                    <div class="thumbnails">
+                        <div class="thumbnail active" onclick="changeImage('main-petrobras-arg', 'img/project2.jpg', this)">
+                            <img src="img/project2.jpg" alt="Thumbnail 1">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('main-petrobras-arg', 'img/project3.jpg', this)">
+                            <img src="img/project3.jpg" alt="Thumbnail 2">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('main-petrobras-arg', 'img/project4.jpg', this)">
+                            <img src="img/project4.jpg" alt="Thumbnail 3">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('main-petrobras-arg', 'img/project1.jpg', this)">
+                            <img src="img/project1.jpg" alt="Thumbnail 4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ypfb-andina-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-info">
+                    <h2>YPFB Andina</h2>
+                    <div class="info-section">
+                        <strong>Descripción</strong>
+                        <p>Empresa boliviana del sector hidrocarburífero, subsidiaria de Yacimientos Petrolíferos Fiscales Bolivianos (YPFB).</p>
+                    </div>
+                    <div class="info-section">
+                        <strong>Servicios Prestados</strong>
+                        <div class="tags-container">
+                            <span class="tag service-tag">Capacitación QHSE&RSE</span>
+                            <span class="tag service-tag">Desarrollo de Programas Ambientales</span>
+                            <span class="tag service-tag">Soporte Técnico en Operaciones</span>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <strong>Período de Colaboración</strong>
+                        <div class="tags-container">
+                            <span class="tag duration-tag">Colaboración extendida</span>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <strong>Resultados</strong>
+                        <div class="tags-container">
+                            <span class="tag result-tag">Implementación de sistemas de gestión ambiental</span>
+                            <span class="tag result-tag">Mejora en indicadores de seguridad</span>
+                            <span class="tag result-tag">Desarrollo de capacidades técnicas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-gallery">
+                    <div class="main-image" onclick="toggleZoom(this)">
+                        <img src="img/project3.jpg" alt="Proyecto con YPFB Andina" id="main-ypfb">
+                    </div>
+                    <div class="thumbnails">
+                        <div class="thumbnail active" onclick="changeImage('main-ypfb', 'img/project3.jpg', this)">
+                            <img src="img/project3.jpg" alt="Thumbnail 1">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('main-ypfb', 'img/project4.jpg', this)">
+                            <img src="img/project4.jpg" alt="Thumbnail 2">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('main-ypfb', 'img/project1.jpg', this)">
+                            <img src="img/project1.jpg" alt="Thumbnail 3">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('main-ypfb', 'img/project2.jpg', this)">
+                            <img src="img/project2.jpg" alt="Thumbnail 4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- aqui iran mas modales -->
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-phone"></i> +591 710-11739</p>
+                    <p><i class="fas fa-envelope"></i> ramiromoscosoz@hotmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Santa Cruz, Bolivia</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="capacitacion.html">Capacitación</a></li>
+                        <li><a href="consultoria.html">Consultoría</a></li>
+                        <li><a href="soporte-admin-operativo.html">Soporte</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Empresa</h3>
+                    <ul>
+                        <li><a href="quienes-somos.html">Quienes Somos</a></li>
+                        <li><a href="valores.html">Valores</a></li>
+                        <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mentoría & Consulting Group (MCG). Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/modal.js"></script>
+</body>
+</html>
