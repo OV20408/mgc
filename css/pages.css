@@ -272,6 +272,21 @@
     border-radius: 10px;
 }
 
+.value-chain-image {
+    text-align: center;
+    margin-top: 3rem;
+
+}
+
+.value-chain-image img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+
+}
+
+
+
 /* Services Page Styles */
 .services-intro {
     padding: 5rem 0;

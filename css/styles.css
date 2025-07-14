@@ -499,12 +499,12 @@ body {
 
     .nav-menu {
         position: fixed;
-        top: 100%;
+        top: 96px;
         left: 0;
         width: 100%;
         background-color: var(--white);
         flex-direction: column;
-        padding: 2rem 0;
+        padding: 2rem 2rem; /* Más padding izquierdo */
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         transform: translateX(-100%);
         transition: transform 0.3s ease;
@@ -559,4 +559,6 @@ body {
         font-size: 2rem;
     }
 }
+
+
 
