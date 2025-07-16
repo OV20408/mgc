@@ -451,6 +451,9 @@
     font-weight: 600;
 }
 
+
+
+
 /* Contact Page Styles */
 .contact-content {
     padding: 5rem 0;
@@ -569,6 +572,162 @@
     font-size: 1.1rem;
     line-height: 1.8;
 }
+
+
+/* ===========================================
+   SOLO AGREGAR ESTAS REGLAS PARA CONTACTO.HTML
+   =========================================== */
+
+/* Para dispositivos menores a 480px */
+@media (max-width: 480px) {
+    /* Contacto específico */
+    .contact-content {
+        padding: 30px 0;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .contact-form,
+    .contact-info {
+        padding: 15px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 16px; /* Evita zoom en iOS */
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .contact-item i {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .commitment-message {
+        padding: 25px 15px;
+    }
+    
+    .map-container iframe {
+        height: 200px;
+    }
+    
+
+}
+
+/* Para dispositivos menores a 379px (muy pequeños) */
+@media (max-width: 379px) {
+    .contact-content {
+        padding: 20px 0;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    .contact-form,
+    .contact-info {
+        padding: 10px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 8px;
+        font-size: 16px;
+    }
+    
+    .contact-item {
+        padding: 10px;
+    }
+    
+    .contact-item h4 {
+        font-size: 14px;
+    }
+    
+    .contact-item p {
+        font-size: 13px;
+    }
+    
+    .commitment-message {
+        padding: 20px 10px;
+    }
+    
+    .commitment-message h3 {
+        font-size: 1.3rem;
+    }
+    
+    .commitment-message p {
+        font-size: 14px;
+    }
+    
+    .page-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .page-hero p {
+        font-size: 14px;
+    }
+    
+    .cta-header .btn {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}
+
+/* Para dispositivos menores a 320px (extra pequeños) */
+@media (max-width: 319px) {
+    .contact-form,
+    .contact-info {
+        padding: 8px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 6px;
+        font-size: 14px;
+    }
+    
+    .contact-item {
+        padding: 8px;
+    }
+    
+    .commitment-message {
+        padding: 15px 8px;
+    }
+    
+    .page-hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .cta-header .btn {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    
+    .container {
+        padding: 0 5px;
+    }
+}
+
+
 
 
 
@@ -1217,7 +1376,7 @@
     transform: rotate(30deg);
 }
 
-/* Versión mobile */
+/* Versión mobile servicios */
 .support-services-mobile {
     display: flex;
     flex-direction: column;
