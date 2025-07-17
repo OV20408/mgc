@@ -439,6 +439,63 @@ body {
 
 
 
+/* Modificaciones para dispositivos móviles pequeños */
+@media (max-width: 480px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 80px 0 40px; /* Espacio para header y contenido */
+    }
+
+    .hero-title {
+        font-size: 1.8rem !important;
+        padding-top: 2rem !important;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem !important;
+        line-height: 1.5;
+        max-height: 200px;
+        overflow-y: auto;
+        padding: 0 10px;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-content .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-controls {
+        position: relative;
+        margin-top: 2rem;
+        transform: none;
+        left: auto;
+        bottom: auto;
+    }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.6rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 0.85rem !important;
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 

@@ -65,18 +65,12 @@
     background-color: var(--white);
 }
 
-.company-profile.alt-layout {
-    background-color: #f8f9fa;
-}
-
 .profile-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center; /* Centrar verticalmente */
     gap: 3rem;
 }
 
-/* Estilos para el contenido de texto */
 .profile-content {
     flex: 1;
     min-width: 300px;
@@ -87,7 +81,19 @@
 .profile-content h2 {
     font-size: 2.5rem;
     color: var(--dark-blue);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.profile-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-blue);
 }
 
 .profile-content p {
@@ -97,42 +103,40 @@
     margin-bottom: 1.5rem;
 }
 
-/* Estilos para el contenedor de imagen */
+/* Contenedor de imagen mejorado */
 .profile-image-container {
-    flex: 0 0 350px;
+    flex: 0 0 45%; /* Más espacio para la imagen */
     display: flex;
     justify-content: center;
 }
 
 .profile-image-card {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
     background-color: #f8f9fa;
     border-radius: 15px;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     width: 100%;
-    height: 24rem;
-    max-width: 35rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.company-profile.alt-layout .profile-image-card {
-    background-color: var(--white);
+    max-width: 30rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0; /* Borde sutil */
 }
 
 .profile-image-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-
-
+/* Imagen con espacio y borde redondeado */
 .profile-image-card img {
-    width: 28rem;
-    height: 20rem;
-    max-height: 30rem;
+    width: 100%;
+    height: auto;
+    max-height: 25rem;
     object-fit: contain;
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interno */
+    background-color: white; /* Fondo para la imagen */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil */
 }
 
 /* Animación de fade-in */
@@ -162,20 +166,78 @@
     transform: translateY(0);
 }
 
-/* Respetar preferencias de reducción de movimiento */
-@media (prefers-reduced-motion: reduce) {
-    .scroll-fade {
-        transition: none;
-        opacity: 1 !important;
+/* Ajustes para pantallas pequeñas (menores a 768px) */
+@media (max-width: 768px) {
+    .page-hero {
+        height: 40vh; /* Reducir altura del hero */
+        margin-top: 60px; /* Ajustar espacio para header */
     }
-    .scroll-fade-up {
-        transform: none !important;
+    
+    .page-hero h1 {
+        font-size: 2rem; /* Tamaño de fuente más pequeño */
+    }
+    
+    .profile-wrapper {
+        flex-direction: column; /* Apilar elementos verticalmente */
+        gap: 1.5rem;
+    }
+    
+    .profile-content, 
+    .profile-image-container {
+        flex: 1 1 100%; /* Ocupar todo el ancho */
+        min-width: 100%;
+    }
+    
+    .profile-image-card {
+        height: auto; /* Altura automática */
+        padding: 1rem; /* Menos padding */
+        max-width: 100%;
+    }
+    
+    .profile-image-card img {
+        width: 100%; /* Imagen adaptable al contenedor */
+        height: auto; /* Mantener proporción */
+        max-height: 300px; /* Límite máximo de altura */
+    }
+    
+    .values-list {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+    
+    .team-member {
+        grid-template-columns: 1fr; /* Apilar imagen y texto */
+        padding: 1.5rem;
+    }
+    
+    .member-image {
+        text-align: center; /* Centrar imagen */
+        margin-bottom: 1rem;
+    }
+    
+    .member-image img {
+        width: 150px; /* Tamaño más apropiado */
+        height: 200px;
     }
 }
 
-
-
-
+/* Ajustes para pantallas muy pequeñas (menores a 480px) */
+@media (max-width: 480px) {
+    .profile-content h2 {
+        font-size: 1.8rem; /* Títulos más pequeños */
+    }
+    
+    .profile-content p {
+        font-size: 1rem; /* Texto más legible */
+    }
+    
+    .page-hero p {
+        font-size: 1rem; /* Texto más pequeño en hero */
+    }
+    
+    .team-member {
+        padding: 1rem; /* Menos espacio interno */
+    }
+}
 
 
 
@@ -414,17 +476,12 @@
     margin-bottom: 4rem;
 }
 
-.mvv-item {
-    background-color: #f8f9fa;
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    border-left: 5px solid var(--primary-blue);
-}
+
 
 .mvv-item h3 {
     color: var(--dark-blue);
-    font-size: 1.5rem;
+    font-size: 2.7rem;
+    text-align: center;
     margin-bottom: 1rem;
 }
 
