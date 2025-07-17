@@ -148,3 +148,44 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
+
+
+
+//quienesomos fading animation
+// Configuración del Intersection Observer para el efecto fade
+document.addEventListener('DOMContentLoaded', function() {
+    // Opciones del observer
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    // Callback para el observer
+    const fadeInCallback = function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Opcional: dejar de observar después de la primera vez
+                // observer.unobserve(entry.target);
+            } else {
+                // Opcional: remover la clase si quieres que se repita la animación
+                // entry.target.classList.remove('visible');
+            }
+        });
+    };
+
+    // Crear el observer
+    const fadeObserver = new IntersectionObserver(fadeInCallback, observerOptions);
+
+    // Seleccionar elementos a observar
+    const elementsToFade = document.querySelectorAll(
+        '.company-profile, .values-section, .experience-section, .team-member, .value-card'
+    );
+
+    // Añadir la clase inicial y observar cada elemento
+    elementsToFade.forEach(element => {
+        element.classList.add('scroll-fade', 'scroll-fade-up');
+        fadeObserver.observe(element);
+    });
+});
+

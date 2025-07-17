@@ -8,6 +8,7 @@
     <title>Quienes Somos - MCG</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/pages.css">
+    <link rel="icon" href="img/logo-nav.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Loading Spinner -->
     <div class="page-transition-loader">
@@ -21,7 +22,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="img/logo2.png" alt="MCG - Mentoría & Consulting Group">
+                <img src="img/Logo compacto.png" alt="MCG - Mentoría & Consulting Group">
             </div>
             <nav class="nav">
                 <ul class="nav-menu">
@@ -64,35 +65,21 @@
 
         <section class="company-profile">
             <div class="container">
-                <div class="profile-content">
-                    <h2>PERFIL DE LA EMPRESA</h2>
-                    <p>
-                        En <strong>Mentoría & CONSULTING GROUP S.R.L. (MCG)</strong> estamos comprometidos con el éxito de las empresas 
-                        a través del soporte especializado y consultoría organizacional para alcanzar la excelencia en los diversos 
-                        procesos del Negocio.
-                    </p>
-                    <p>
-                        Nos enorgullece presentar nuestros servicios de <strong>Capacitación, Consultoría y Servicios de Soporte 
-                        Administrativo y/o Operativo</strong> en Gobernanza, Estrategia, Calidad, Seguridad, Salud, Medio Ambiente y 
-                        Responsabilidad Social Empresarial (QHSE&RSE) para alcanzar el desarrollo sostenible de diversas organizaciones.
-                    </p>
-                </div>
-                <div class="profile-images">
-                    <div class="profile-image-card">
-                        <img src="img/calidad.png" alt="Calidad">
-                        <h3>Calidad</h3>
+                <div class="profile-wrapper"> <!-- Nuevo contenedor flex -->
+                    <div class="profile-content">
+                        <h2>PERFIL DE LA EMPRESA</h2>
+                        <p>
+                            <strong>Mentoría & CONSULTING GROUP S.R.L. (MCG)</strong> bajo el acrónimo de <strong>MCG</strong>, es una empresa boliviana conformada por profesionales con amplia experiencia en el rubro de Gas y Petróleo, cuyos reconocidos estándares y prácticas vanguardistas en las áreas de Calidad, Seguridad, Salud, Medio Ambiente y RSE <strong>(QHSE&RSE)</strong>, son también referencia para otros sectores de la industria.
+                        </p>
+                        <p>
+                            Dichos conocimientos sustentados en la experiencia y una continua actualización de sus profesionales, permite prestar servicios al sector hidrocarburos y a la industria en general, conforme a las nuevas demandas y necesidades de los mercados, cuyo objetivo final es generar el <strong>máximo valor</strong> posible a sus clientes.
+                        </p>
                     </div>
-                    <div class="profile-image-card">
-                        <img src="img/seguridad.png" alt="Seguridad">
-                        <h3>Seguridad</h3>
-                    </div>
-                    <div class="profile-image-card">
-                        <img src="img/medio-ambiente.png" alt="Medio Ambiente">
-                        <h3>Medio Ambiente</h3>
-                    </div>
-                    <div class="profile-image-card">
-                        <img src="img/QHSE_RSE1.png" alt="RSE">
-                        <h3>QHSE&RSE</h3>
+                    
+                    <div class="profile-image-container"> <!-- Nuevo contenedor para la imagen -->
+                        <div class="profile-image-card">
+                            <img src="img/profile-image.png" alt="Calidad">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -104,23 +91,50 @@
         <section class="values-section">
             <div class="container">
                 <div class="mission-vision-values">
-                    <div class="mvv-item">
-                        <h3>NUESTRA MISIÓN</h3>
-                        <p>
-                            PROPORCIONAR A LAS EMPRESAS HERRAMIENTAS NECESARIAS PARA ALCANZAR LOS MÁS ALTOS ESTÁNDARES 
-                            EN CALIDAD, SEGURIDAD, SALUD OCUPACIONAL, CUIDADO DEL MEDIO AMBIENTE Y RESPONSABILIDAD SOCIAL 
-                            EMPRESARIAL, ENFOCADOS EN LA MEJORA CONTINUA, EL BIENESTAR DE LAS PERSONAS Y EL ALCANCE DE 
-                            LOS OBJETIVOS EMPRESARIALES.
-                        </p>
-                    </div>
+                    <section class="company-profile alt-layout">
+                        <div class="container">
+                            <div class="profile-wrapper">
+                                <div class="profile-image-container">
+                                    <div class="profile-image-card">
+                                        <img src="img/mision.jpeg" alt="Nuestra Misión">
+                                    </div>
+                                </div>
+                                
+                                <div class="profile-content">
+                                    <h2>NUESTRA MISIÓN</h2>
+                                    <p>
+                                        PROPORCIONAR A LAS EMPRESAS HERRAMIENTAS NECESARIAS PARA ALCANZAR LOS MÁS ALTOS ESTÁNDARES 
+                                        EN CALIDAD, SEGURIDAD, SALUD OCUPACIONAL, CUIDADO DEL MEDIO AMBIENTE Y RESPONSABILIDAD SOCIAL 
+                                        EMPRESARIAL, ENFOCADOS EN LA MEJORA CONTINUA, EL BIENESTAR DE LAS PERSONAS Y EL ALCANCE DE 
+                                        LOS OBJETIVOS EMPRESARIALES.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Sección 3: Visión (texto izquierda, imagen derecha) -->
+                    <section class="company-profile">
+                        <div class="container">
+                            <div class="profile-wrapper">
+                                <div class="profile-content">
+                                    <h2>NUESTRA VISIÓN</h2>
+                                    <p>
+                                        OFERTAR SERVICIOS ESPECIALIZADOS, DE CALIDAD Y RECONOCIDOS EN EL MERCADO PARA EL DESARROLLO DE DIVERSAS ORGANIZACIONES BAJO UN MARCO SOSTENIBLE, SOCIAL Y AMBIENTALMENTE RESPONSABLE.
+                                    </p>
+                                </div>
+                                
+                                <div class="profile-image-container">
+                                    <div class="profile-image-card">
+                                        <img src="img/vision.jpeg" alt="Nuestra Visión">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     
-                    <div class="mvv-item">
-                        <h3>NUESTRA VISIÓN</h3>
-                        <p>
-                            Ofertar servicios especializados, de calidad y reconocidos en el mercado para el desarrollo 
-                            de diversas organizaciones bajo un marco sostenible, social y ambientalmente responsable.
-                        </p>
-                    </div>
+
+
                     
                     <div class="mvv-item">
                         <h3>NUESTROS VALORES</h3>
@@ -156,10 +170,7 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="sustainability-image">
-                    <img src="img/sustainability-pic.png" alt="Sostenibilidad - Económico, Social, Ambiental">
-                </div>
+
             </div>
         </section>
 

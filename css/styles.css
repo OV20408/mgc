@@ -29,6 +29,17 @@ body {
     padding: 0 20px;
 }
 
+.hero-title {
+    font-size: 3.1rem;
+    font-weight: 700;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out;
+    text-align: center;
+    
+}
+
 /* Header Styles */
 .header {
     background-color: var(--white);
@@ -50,6 +61,8 @@ body {
 .logo img {
     height: 5rem;
     width: auto;
+    margin-left: -5rem;
+    
 }
 
 .nav-menu {
@@ -198,9 +211,14 @@ body {
     position: relative;
     height: 100vh;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: hidden; /* Esto es necesario pero verifica que no corte los controles */
+    text-align: center;
 }
+
+
 
 .hero-background {
     position: absolute;
@@ -208,19 +226,112 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 1; /* Asegúrate que tenga un z-index definido */
 }
+
+/* --- FIX: el título debe ir sobre la capa azul de la diapositiva --- */
+.hero-content {
+    position: relative;
+    z-index: 3; /* Mayor que hero-slide */
+}
+
+
+
+/* Agregar esto al archivo styles.css */
+/* Controles del carrusel */
+.hero-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 4; /* Mayor que todo lo demás */
+    /* resto de estilos... */
+}
+
+.hero-control {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero-control:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.hero-indicators {
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .hero-controls {
+        padding: 6px 12px;
+        gap: 10px;
+    }
+    
+    .hero-control {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+    
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+
+
+
+
+
+
 
 @media (max-width: 379px) {
     .hero-title {
         font-size: 1.7rem;
-        line-height: 1.2;
+        line-height: 1;
         margin-bottom: 1rem;
+        padding-top: 10rem;
+        text-align: center;
+
     }
     
     .hero-subtitle {
         font-size: 1rem;
-        line-height: 1.4;
+        line-height: 1.2;
     }
     
     .hero-subtitle .text-preserve {
@@ -231,11 +342,19 @@ body {
     .hero-subtitle br {
         display: none; /* Elimina el salto de línea forzado */
     }
+
+    .logo img {
+            height: 3rem;
+            margin-left: 0;
+        }
 }
 
 @media (max-width: 369px) {
     .hero-title {
         font-size: 1.6rem;
+        padding-top: 10rem;
+        text-align: center;
+
     }
     .hero-subtitle {
         font-size: 1rem;
@@ -243,18 +362,26 @@ body {
     .hero-subtitle br {
         display: none;
     }
+
+
 }
 
 /* Para pantallas hasta 350px */
 @media (max-width: 359px) {
     .hero-title {
         font-size: 1.5rem;
+        padding-top: 10rem;
+        text-align: center;
     }
     .hero-subtitle {
         font-size: 0.95rem;
     }
     .mission p {
         font-size: 0.9rem;
+    }
+    .logo img {
+        height: 2.7rem;
+        margin-left: 0.2rem;
     }
 }
 
@@ -269,8 +396,8 @@ body {
     height: 100%;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    z-index: 2; /* Mayor que hero-background */
 }
-
 .hero-slide.active {
     opacity: 1;
 }
@@ -292,27 +419,16 @@ body {
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
     color: var(--white);
     text-align: center;
 }
 
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    padding-top: 8rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 1s ease-out;
-}
+
 
 .hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     animation: fadeInUp 1s ease-out 0.3s both;
 }
@@ -320,6 +436,11 @@ body {
 .hero .btn {
     animation: fadeInUp 1s ease-out 0.6s both;
 }
+
+
+
+
+
 
 /* Services Overview */
 .services-overview {
@@ -376,7 +497,7 @@ body {
 
 /* CTA Section */
 .cta-section {
-    padding: 5rem 0;
+    padding: 2rem;
     background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
     color: var(--white);
     text-align: center;
@@ -559,6 +680,14 @@ body {
         transition: transform 0.3s ease;
     }
 
+
+    .logo img {
+        height: 4rem;
+        width: auto;
+        margin-left: -1rem;
+    }
+
+
     .nav-menu.active {
         transform: translateX(0);
     }
@@ -575,7 +704,8 @@ body {
 
     .hero-title {
         font-size: 2.5rem;
-        padding-top: 2rem;
+        padding-top: 10rem;
+        text-align: center;
 
     }
 
@@ -595,7 +725,8 @@ body {
 @media (max-width: 480px) {
     .hero-title {
         font-size: 2rem;
-        padding-top: 2rem;
+        padding-top: 10rem;
+        text-align: center;
     }
 
     .hero-subtitle {
@@ -613,4 +744,18 @@ body {
 }
 
 
+@media (max-width: 1024px) {      /* iPad Pro, Surface, etc. */
+  .logo img{
+    height: 4.5rem;               /* un pelín más pequeño     */
+    margin-left: -2rem;           /* menos desplazamiento      */
+    max-width: 220px;             /* evita que desborde        */
+  }
+}
 
+@media (max-width: 900px) {       /* tablets en vertical (~820 px) */
+  .logo img{
+    height: 4rem;
+    margin-left: 0;               /* centrado dentro del .container */
+    max-width: 200px;
+  }
+}
