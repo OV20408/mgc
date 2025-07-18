@@ -58,6 +58,7 @@
 
 
 
+
 /* Company Profile Section */
 /* Estilos base para todas las secciones de perfil */
 .company-profile {
@@ -238,8 +239,6 @@
         padding: 1rem; /* Menos espacio interno */
     }
 }
-
-
 
 
 
@@ -548,6 +547,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
 /* Services Page Styles */
 .services-intro {
     padding: 5rem 0;
@@ -711,6 +719,16 @@
     color: var(--dark-blue);
     font-weight: 600;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1444,7 +1462,7 @@
     transition: all 0.3s ease;
 }
 
-.accordion-button:hover {
+.methodology-section .accordion-button:hover {
     background-color: #f8f9fa;
 }
 

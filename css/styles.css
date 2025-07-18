@@ -698,6 +698,220 @@ body {
     text-align: center;
 }
 
+
+/* Estilos adicionales para capacitación */
+.training-highlight {
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 3rem 0;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.training-highlight h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.training-section {
+    padding: 4rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.training-section:last-child {
+    border-bottom: none;
+}
+
+.training-section h3 {
+    color: var(--dark-blue);
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.training-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-blue);
+}
+
+.accordion-item {
+    margin-top: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-button {
+    width: 100%;
+    padding: 1.5rem;
+    text-align: left;
+    background-color: var(--dark-blue);
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.accordion-button i {
+    transition: transform 0.3s ease;
+}
+
+.accordion-button.active i {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background-color: white;
+}
+
+.accordion-content ul {
+    padding: 1.5rem;
+    list-style: none;
+}
+
+.accordion-content li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.accordion-content li::before {
+    content: "•";
+    color: var(--primary-blue);
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+}
+
+.other-required {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-style: italic;
+    margin-top: 1rem;
+    display: block;
+    padding: 0.5rem;
+    background-color: rgba(17, 126, 167, 0.1);
+    border-radius: 5px;
+}
+
+/* Estilos para el slider técnico */
+.tech-slider-section {
+    background-color: #f8f9fa;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.slider-title {
+    color: var(--dark-blue);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.slider-subtitle {
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.swiper {
+    width: 100%;
+    height: 400px;
+    padding: 50px 0;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    color: white;
+    z-index: 2;
+    padding: 0 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.swiper-slide:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .training-section {
+        padding: 2.5rem 0;
+    }
+    
+    .training-section h3 {
+        font-size: 1.8rem;
+    }
+    
+    .swiper {
+        height: 350px;
+    }
+    
+    .swiper-slide {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+
+
+
+
+
+
+
+
 @keyframes sk-bounce {
     0%, 100% { 
         transform: scale(0.0);
