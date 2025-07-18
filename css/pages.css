@@ -1462,9 +1462,6 @@
     transition: all 0.3s ease;
 }
 
-.methodology-section .accordion-button:hover {
-    background-color: #f8f9fa;
-}
 
 .accordion-button h4 {
     color: var(--dark-blue);
