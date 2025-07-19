@@ -38,12 +38,12 @@ function handleSubmit(event) {
     
     // Preparar datos para EmailJS - CORREGIDO para coincidir con el template
     const templateParams = {
-        name: form.nombre.value + ' ' + form.apellido.value,        // Para From Name
-        from_name: form.nombre.value + ' ' + form.apellido.value,   // Para contenido
-        from_email: form.email.value,
-        phone: form.telefono.value || 'No proporcionado',
-        subject: form.asunto.value,
-        message: form.mensaje.value
+            name: form.nombre_completo.value,        // Usamos el nombre completo
+            from_name: form.nombre_completo.value,   // Usamos el nombre completo
+            from_email: form.email.value,
+            phone: form.telefono.value || 'No proporcionado',
+            subject: form.asunto.value,
+            message: form.mensaje.value
     };
     
     // Debug: mostrar los datos que se enviarán
@@ -96,7 +96,7 @@ function handleSubmit(event) {
 
 // Función de validación
 function validateForm(form) {
-    const requiredFields = ['nombre', 'apellido', 'email', 'asunto', 'mensaje'];
+    const requiredFields = ['nombre_completo', 'email', 'asunto', 'mensaje'];
     let isValid = true;
     
     requiredFields.forEach(fieldName => {

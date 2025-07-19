@@ -173,6 +173,9 @@
     animation-delay: -1.0s;
 }
 
+
+
+
 @keyframes sk-bounce {
     0%, 100% { 
         transform: scale(0.0);
@@ -180,6 +183,7 @@
         transform: scale(1.0);
     }
 }
+
 
 
 @media (max-width: 768px) {

@@ -68,7 +68,7 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .nav-menu a {
@@ -158,8 +158,68 @@ body {
 
 .cta-header .btn {
     padding: 0.5rem 1rem;
+    margin-right: -3rem;
     font-size: 0.9rem;
 }
+
+/* Logo y Nombre de la empresa */
+.logo-brand {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+.logo img {
+   height: 4rem;
+   width: auto;
+   margin-left: -3rem; /* Ajusta según sea necesario */
+}
+
+.brand-name {
+   display: flex;
+   flex-direction: column;
+   line-height: 1.2;
+}
+
+.brand-name .company-name {
+   font-size: 1.2rem;
+   font-weight: 700;
+   color: var(--dark-blue);
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+}
+
+.brand-name .company-subtitle {
+   font-size: 0.9rem;
+   font-weight: 500;
+   color: var(--primary-blue);
+   text-transform: uppercase;
+   letter-spacing: 0.3px;
+}
+
+/* Responsive para logo y nombre */
+@media (max-width: 768px) {
+   .logo-brand {
+       gap: 0.5rem;
+   }
+   
+   .logo img {
+       height: 3rem;
+   }
+   
+   .brand-name .company-name {
+       font-size: 1rem;
+   }
+   
+   .brand-name .company-subtitle {
+       font-size: 0.8rem;
+   }
+}
+
+
+
+
+
 
 /* Button Styles */
 .btn {
@@ -205,6 +265,9 @@ body {
     color: var(--white);
     transform: translateY(-2px);
 }
+
+
+
 
 /* Hero Section */
 .hero {

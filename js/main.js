@@ -131,6 +131,23 @@ function closeModal(modalId) {
     }
 }
 
+
+
+function changeImage(mainId, imageName, element) {
+    // Cambia la imagen principal
+    const mainImage = document.getElementById(mainId);
+    if (mainImage) {
+        mainImage.src = imageName;
+    }
+    // Quita la clase 'active' de todos los thumbnails hermanos
+    if (element && element.parentElement) {
+        const siblings = element.parentElement.querySelectorAll('.thumbnail');
+        siblings.forEach(thumb => thumb.classList.remove('active'));
+        element.classList.add('active');
+    }
+}
+
+
 // Close modal when clicking outside
 document.addEventListener('click', function(e) {
     if (e.target.classList.contains('modal')) {
