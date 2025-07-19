@@ -171,7 +171,7 @@
 /* Ajustes para pantallas pequeñas (menores a 768px) */
 @media (max-width: 768px) {
     .page-hero {
-        height: 40vh; /* Reducir altura del hero */
+        height: 50vh; /* Reducir altura del hero */
         margin-top: 60px; /* Ajustar espacio para header */
     }
     
@@ -1523,7 +1523,6 @@
 
 .central-icon {
     position: absolute;
-    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 150px;
@@ -1590,7 +1589,7 @@
         .mindmap-container {
             position: relative;
             width: 100%;
-            height: 800px;
+            height: 1150px;
             margin: 4rem 0;
             background: radial-gradient(circle at center, rgba(255,255,255,0.9) 0%, rgba(245,247,250,0.8) 100%);
             border-radius: 20px;
@@ -1600,12 +1599,12 @@
 
         /* Central Node */
         .central-node {
-            position: absolute;
-            top: 50%;
+            position: relative;
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 200px;
-            height: 200px;
+            width: 170px;
+            height: 170px;
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
             border-radius: 50%;
             display: flex;
@@ -1708,19 +1707,41 @@
             text-align: center;
         }
 
-        /* Bottom Services (Page 20) */
+/* Bottom Services - Reorganizado en 2 filas */
         .bottom-services {
-            position: absolute;
+            position: relative;
             bottom: 50px;
             left: 0;
             right: 0;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
             padding: 0 2rem;
             z-index: 5;
+            margin-top: 35rem;
+            align-items: center;
         }
-
+        
+        /* Primera fila - 4 servicios */
+        .bottom-services-row-1 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 900px;
+            justify-items: center;
+        }
+        
+        /* Segunda fila - 5 servicios */
+        .bottom-services-row-2 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.2rem;
+            width: 100%;
+            max-width: 1000px;
+            justify-items: center;
+        }
+        
         .bottom-service-node {
             width: 180px;
             padding: 1rem;
@@ -1730,48 +1751,401 @@
             transition: all 0.3s ease;
             cursor: pointer;
             border: 2px solid transparent;
-            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
-
+        
         .bottom-service-node:hover {
             transform: translateY(-3px);
             box-shadow: 0 12px 25px rgba(0,0,0,0.12);
             border-color: var(--primary-blue);
         }
-
+        
         .bottom-service-node .node-icon {
             width: 45px;
             height: 45px;
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
             font-size: 1.2rem;
+            margin-bottom: 1rem;
         }
-
+        
         .bottom-service-node h4 {
             color: var(--dark-blue);
             margin-bottom: 0.5rem;
             font-size: 0.9rem;
-            text-align: center;
             line-height: 1.2;
         }
-
+        
         .bottom-service-node p {
             color: var(--text-light);
             font-size: 0.8rem;
             line-height: 1.4;
-            text-align: center;
+            margin: 0;
         }
 
         /* Connection Lines for Top Services */
-        .line-top-1 { width: 180px; top: 200px; left: 15%; transform: rotate(35deg); }
-        .line-top-2 { width: 180px; top: 200px; left: 35%; transform: rotate(-35deg); }
-        .line-top-3 { width: 180px; top: 200px; right: 35%; transform: rotate(35deg); }
-        .line-top-4 { width: 180px; top: 200px; right: 15%; transform: rotate(-35deg); }
+        .line-top-1 { width: 450px; top: 320px; left: 10%; transform: rotate(35deg); }
+        .line-top-2 { width: 280px; top: 380px; left: 35%; transform: rotate(50deg); }
+        .line-top-3 { width: 280px; top: 380px; right: 35%; transform: rotate(-50deg); }
+        .line-top-4 { width: 450px; top: 320px; right: 10%; transform: rotate(-35deg); }
+        
+        /* Connection Lines for Bottom Services Row 1 */
+        .line-bottom-1 { width: 430px; bottom: 540px; left: 10%; transform: rotate(-35deg); }
+        .line-bottom-2 { width: 230px; bottom: 520px; left: 34%; transform: rotate(-55deg); }
+        .line-bottom-3 { width: 230px; bottom: 520px; right:34%; transform: rotate(55deg); }
+        .line-bottom-4 { width: 430px; bottom: 540px; right: 10%; transform: rotate(35deg); }
+        
+        /* Connection Lines for Bottom Services Row 2 */
+/*         .line-bottom-sub-1 { width: 150px; bottom: 100px; left: 12%; transform: rotate(-35deg); }
+        .line-bottom-sub-2 { width: 120px; bottom: 80px; left: 28%; transform: rotate(-20deg); }
+        .line-bottom-sub-3 { width: 100px; bottom: 70px; left: 50%; transform: translate(-50%, 0) rotate(0deg); }
+        .line-bottom-sub-4 { width: 120px; bottom: 80px; right: 28%; transform: rotate(20deg); }
+        .line-bottom-sub-5 { width: 150px; bottom: 100px; right: 12%; transform: rotate(35deg); } */
+        
+        
+/* Estilos base para versión móvil */
+.support-services-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
 
-        /* Connection Lines for Bottom Services */
-        .line-bottom-1 { width: 120px; bottom: 180px; left: 18%; transform: rotate(-45deg); }
-        .line-bottom-2 { width: 120px; bottom: 180px; left: 32%; transform: rotate(45deg); }
-        .line-bottom-3 { width: 120px; bottom: 180px; right: 32%; transform: rotate(-45deg); }
-        .line-bottom-4 { width: 120px; bottom: 180px; right: 18%; transform: rotate(45deg); }
+.support-service {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 12px;
+    align-items: flex-start;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--primary-blue);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.support-service:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.service-icon {
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    box-shadow: 0 2px 10px rgba(52, 125, 193, 0.3);
+}
+
+.rental-icon {
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--primary-blue) 100%);
+}
+
+.service-content h3 {
+    color: var(--dark-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.service-content p {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.technical-services-title,
+.rental-services-title {
+    text-align: center;
+    margin: 2rem 0 1rem;
+}
+
+.technical-services-title h3,
+.rental-services-title h3 {
+    color: var(--dark-blue);
+    font-size: 1.3rem;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.technical-services-title h3::before,
+.technical-services-title h3::after,
+.rental-services-title h3::before,
+.rental-services-title h3::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 2px;
+    background: var(--light-blue);
+}
+
+.technical-services-title h3::before,
+.rental-services-title h3::before {
+    left: 0;
+}
+
+.technical-services-title h3::after,
+.rental-services-title h3::after {
+    right: 0;
+}
+
+.rental-service {
+    border-left-color: var(--light-blue);
+}
+
+/* Control de visibilidad */
+@media (min-width: 992px) {
+    .mindmap-container {
+        display: block;
+    }
+    .support-services-mobile {
+        display: none;
+    }
+}
+
+/* Media Queries Específicas */
+
+/* Tablets y pantallas medianas (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .mindmap-container {
+        display: none;
+    }
+    
+    .support-services-mobile {
+        display: flex;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+    }
+    
+    .support-service {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+    }
+    
+    .service-icon {
+        align-self: center;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Móviles (max-width: 767px) */
+@media (max-width: 767px) {
+    .mindmap-container {
+        display: none;
+    }
+    
+    .support-services-mobile {
+        display: flex;
+        margin-top: 2rem;
+        padding: 0 0.5rem;
+    }
+    
+    .support-title-wrapper {
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .support-main-title {
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+    
+    .title-line {
+        width: 80px;
+        margin: 0.5rem 0;
+    }
+    
+    .title-text {
+        padding: 0;
+        font-size: 1.5rem;
+    }
+    
+    .support-main-description {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Móviles pequeños (max-width: 480px) */
+@media (max-width: 480px) {
+    .support-services-mobile {
+        gap: 1rem;
+        padding: 0 0.25rem;
+    }
+    
+    .support-service {
+        padding: 1.2rem;
+        gap: 0.8rem;
+    }
+    
+    .service-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .service-content h3 {
+        font-size: 1rem;
+    }
+    
+    .service-content p {
+        font-size: 0.9rem;
+    }
+    
+    .technical-services-title h3,
+    .rental-services-title h3 {
+        font-size: 1.1rem;
+        padding: 0 1.5rem;
+    }
+    
+    .technical-services-title h3::before,
+    .technical-services-title h3::after,
+    .rental-services-title h3::before,
+    .rental-services-title h3::after {
+        width: 30px;
+    }
+}
+
+/* Móviles muy pequeños (max-width: 379px) */
+@media (max-width: 379px) {
+    .support-services-mobile {
+        gap: 0.8rem;
+        margin-top: 1.5rem;
+    }
+    
+    .support-service {
+        padding: 1rem;
+        gap: 0.7rem;
+    }
+    
+    .service-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .service-content h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .service-content p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    .title-text {
+        font-size: 1.3rem;
+    }
+    
+    .support-main-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* Móviles extra pequeños (max-width: 319px) */
+@media (max-width: 319px) {
+    .support-services-mobile {
+        gap: 0.7rem;
+        padding: 0;
+    }
+    
+    .support-service {
+        padding: 0.8rem;
+        gap: 0.6rem;
+        margin: 0 0.1rem;
+    }
+    
+    .service-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .service-content h3 {
+        font-size: 0.9rem;
+    }
+    
+    .service-content p {
+        font-size: 0.8rem;
+    }
+    
+    .technical-services-title h3,
+    .rental-services-title h3 {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .technical-services-title h3::before,
+    .technical-services-title h3::after,
+    .rental-services-title h3::before,
+    .rental-services-title h3::after {
+        width: 20px;
+    }
+    
+    .title-text {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .bottom-services-row-1 {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .bottom-services-row-2 {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .bottom-services {
+                margin-top: 20rem;
+                gap: 2rem;
+            }
+            
+            .bottom-services-row-1,
+            .bottom-services-row-2 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .bottom-service-node {
+                width: 280px;
+            }
+            
+            .connection-line {
+                display: none;
+            }
+        }
 
         /* Animations */
         @keyframes pulse {
@@ -2127,6 +2501,7 @@
 @media (max-width: 480px) {
     .page-hero h1 {
         font-size: 2rem;
+        padding-top: 3rem;
     }
     
     .profile-content h2,

@@ -859,9 +859,10 @@ body {
 .accordion-content li::before {
     content: "•";
     color: var(--primary-blue);
-    position: absolute;
+    position: relative;
     left: 0;
     font-size: 1.5rem;
+    margin: 0.2rem;
 }
 
 .other-required {
