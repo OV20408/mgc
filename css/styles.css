@@ -862,7 +862,7 @@ body {
 }
 
 .accordion-content li {
-    padding: 0.8rem 0;
+    padding: 0.3rem 0;
     border-bottom: 1px solid #eee;
     position: relative;
     padding-left: 1.5rem;
@@ -875,8 +875,35 @@ body {
     left: 0;
     font-size: 1.2rem;
     font-weight: bold;
-    top: 0.8rem;
+    top: 0.1rem;
 }
+
+
+.objectives-list {
+    list-style: none;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.objectives-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.objectives-list li::before {
+    content: "✓";
+    color: var(--primary-blue);
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+
+
 
 .other-required {
     color: var(--primary-blue);
