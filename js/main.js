@@ -21,20 +21,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Hero slider functionality
-    const heroSlides = document.querySelectorAll('.hero-slide');
-    if (heroSlides.length > 1) {
-        let currentSlide = 0;
+    // // Hero slider functionality
+    // const heroSlides = document.querySelectorAll('.hero-slide');
+    // if (heroSlides.length > 1) {
+    //     let currentSlide = 0;
         
-        function nextSlide() {
-            heroSlides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % heroSlides.length;
-            heroSlides[currentSlide].classList.add('active');
-        }
+    //     function nextSlide() {
+    //         heroSlides[currentSlide].classList.remove('active');
+    //         currentSlide = (currentSlide + 1) % heroSlides.length;
+    //         heroSlides[currentSlide].classList.add('active');
+    //     }
         
-        // Auto-advance slides every 5 seconds
-        setInterval(nextSlide, 5000);
-    }
+    //     // Auto-advance slides every 5 seconds
+    //     setInterval(nextSlide, 5000);
+    // }
     
     // Smooth scrolling for anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
