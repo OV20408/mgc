@@ -309,6 +309,7 @@ body {
     position: relative;
     min-height: 120px; /* Altura mínima para evitar saltos */
     margin-bottom: 1rem;
+
 }
 
 .hero-subtitle {
@@ -322,6 +323,9 @@ body {
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.8s ease-in-out;
+    padding-left: 10rem;
+    padding-right: 10rem;
+
 }
 
 .hero-subtitle.active {
@@ -565,7 +569,42 @@ body {
     }
 }
 
+@media (max-width: 860px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
+  .hero-title {
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+
+  .cta-header .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .nav-menu {
+    gap: 1rem;
+  }
+
+  .dropdown-menu {
+    left: auto;
+    right: 0;
+  }
+}
+
+
+
+/*ipad air*/
 
 
 
