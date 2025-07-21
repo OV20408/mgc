@@ -38,7 +38,7 @@
     position: relative;
     z-index: 1;
     color: var(--white);
-    text-align: center;
+    padding-left: 2rem;
 }
 
 .page-hero h1 {
@@ -62,7 +62,7 @@
 /* Estilos base para todas las secciones de perfil */
 
 .company-profile {
-    padding: 5rem 0;
+    padding: 2.5rem 0;
     background-color: var(--white);
 }
 
@@ -229,7 +229,7 @@
     }
     
     .profile-content p {
-        font-size: 1rem; /* Texto más legible */
+        font-size: 1.1rem; /* Texto más legible */
     }
     
     .page-hero p {
@@ -239,6 +239,8 @@
     .team-member {
         padding: 1rem; /* Menos espacio interno */
     }
+
+
 }
 
 
@@ -285,6 +287,11 @@
     color: #555;
     margin-bottom: 0;
 }
+
+
+
+
+
 
 /* Estilos para el equipo */
 .team-section {
@@ -384,21 +391,35 @@
     background-color: #f8f9fa;
 }
 
+
+
 .experience-section h2 {
-    text-align: center;
+    text-align: left;
     font-size: 2.5rem;
     color: var(--dark-blue);
     margin-bottom: 2rem;
+    position: relative;
 }
 
 .experience-intro {
-    text-align: center;
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto 4rem;
+    text-align: left;
+    font-size: 1.1rem;
+    max-width: 100%;
     color: #333;
+    margin-bottom: 3rem;
     line-height: 1.8;
 }
+
+.experience-section .container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-blue);
+}
+
 
 .team-grid {
     display: grid;
@@ -455,7 +476,7 @@
 
 /* Values Page Styles */
 .values-section {
-    padding: 5rem 0;
+    padding: 2.5rem 0;
     background-color: var(--white);
 }
 
@@ -483,6 +504,39 @@
     font-size: 2.7rem;
     text-align: center;
     margin-bottom: 1rem;
+    position: relative;
+}
+
+
+
+/* La línea debajo del título - alineada a la izquierda como en "NUESTRA VISIÓN" */
+.mvv-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Distancia desde el texto */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Centra la línea respecto al texto */
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-blue);
+}
+
+
+
+
+
+/* Para dispositivos móviles */
+@media (max-width: 768px) {
+    .mvv-item h3 {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+    }
+    
+    .mvv-item h3::after {
+        bottom: -12px;
+        width: 60px;
+        height: 3px;
+    }
 }
 
 .mvv-item p {
@@ -568,7 +622,33 @@
     font-size: 2.5rem;
     color: var(--dark-blue);
     margin-bottom: 2rem;
+    position: relative;
 }
+.services-intro h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-blue);
+}
+
+.services-intro h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Distancia desde el texto */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Centra la línea respecto al texto */
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-blue);
+}
+
+
+
+
+
 
 .services-intro p {
     font-size: 1.2rem;
@@ -1364,6 +1444,161 @@
     animation-delay: -1.0s;
 }
 
+/*CAPACTIACIONES OBJETIVOS CARDS CHIQUITOS*/
+/* Training Section Styles */
+        .training-intro {
+            background: var(--white);
+            padding: 3rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+
+
+        /* Compact Training Cards - Adapted from consulting flip cards */
+        .training-areas {
+            margin: 2rem 0;
+        }
+
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .training-card {
+            background-color: transparent;
+            perspective: 1000px;
+            height: 180px; /* Much more compact */
+            width: auto;
+            border-radius: 12px;
+        }
+
+        .training-card p{
+            color: white;
+            text-align: center;
+        }
+
+        .training-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            border-radius: 15px;
+        }
+
+        .training-card:hover .training-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .training-card-front, .training-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem; /* Much smaller padding */
+            border-radius: 12px;
+        }
+
+        .training-card-front {
+            background: linear-gradient(135deg, var(--white) 0%, #f1f5f9 100%);
+            color: var(--dark-blue);
+            border: 2px solid var(--light-blue);
+        }
+
+        .training-card-back {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+            color: var(--white);
+            transform: rotateY(180deg);
+        }
+
+        .training-card-back p {
+            margin-bottom: 1.2rem;
+            font-size: 0.9rem; /* Slightly smaller for compact design */
+            line-height: 1.5;
+        }
+
+        .training-icon {
+            font-size: 2.5rem; /* Reduced from 3rem for compact design */
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .training-card:hover .training-icon {
+            transform: scale(1.1);
+        }
+
+        .training-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem; /* Smaller button */
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .training-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: 0.8rem;
+            }
+            
+            .training-card {
+                height: 160px;
+            }
+            
+            .training-icon {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .training-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .training-card {
+                height: 190px;
+            }
+        }
+
+
+
 
 
 
@@ -1438,6 +1673,8 @@
     color: var(--primary-blue);
     margin-bottom: 1.5rem;
 }
+
+
 
 /* Consultoría - Acordeón */
 .methodology-accordion {
@@ -2508,7 +2745,8 @@
     .experience-section h2,
     .values-content h2,
     .services-intro h2,
-    .training-intro h2 {
+    .training-intro h2,
+    .mvv-item h3 {
         font-size: 2rem;
     }
     
