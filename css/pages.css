@@ -1915,416 +1915,534 @@
 
 
             /* Contenedor principal del mindmap */
-            .mindmap-container {
-                display: flex;
-                flex-direction: column;
-                gap: 4rem;
-                align-items: center;
-                padding: 2rem;
-                background: radial-gradient(circle at center, rgba(255,255,255,0.9) 0%, rgba(245,247,250,0.8) 100%);
-                border-radius: 20px;
-                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            }
+/* CORRECCIONES PRINCIPALES */
 
-            /* Contenedor superior - 4 servicios principales */
-            .top-services-container {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 2rem;
-                width: 100%;
-                max-width: 1000px;
-            }
+/* Contenedor principal del mindmap */
+.mindmap-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    padding: 2rem;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.9) 0%, rgba(245,247,250,0.8) 100%);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
 
-            .service-card {
-                background: var(--white);
-                border-radius: 15px;
-                padding: 2rem 1.5rem;
-                text-align: center;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-                transition: all 0.3s ease;
-                border: 2px solid transparent;
-                cursor: pointer;
-            }
+/* Contenedor superior - 4 servicios principales */
+.top-services-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    align-items: stretch; /* AÑADIDO: Hace que todas las cards tengan la misma altura */
+}
 
-            .service-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-                border-color: var(--light-blue);
-            }
+/* 3D Flip Card Wrapper */
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    width: 100%;
+    height: 280px; /* CAMBIADO: Altura fija más grande para consistencia */
+    cursor: pointer;
+}
 
-            .service-icon {
-                width: 70px;
-                height: 70px;
-                background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 0 auto 1.5rem;
-                color: var(--white);
-                font-size: 2rem;
-            }
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
 
-            .service-card h3 {
-                color: var(--dark-blue);
-                margin-bottom: 1rem;
-                font-size: 1.2rem;
-                line-height: 1.3;
-                font-weight: 600;
-            }
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
 
-            .service-card p {
-                color: var(--text-light);
-                font-size: 0.95rem;
-                line-height: 1.5;
-            }
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
 
-            /* Contenedor inferior - 9 servicios técnicos */
-            .bottom-services-container {
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-                width: 100%;
-                max-width: 1200px;
-            }
+.flip-card-front {
+    background: var(--white);
+    border: 2px solid transparent;
+}
 
-            .bottom-row-1 {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 1.5rem;
-                justify-items: center;
-            }
+.flip-card-back {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+    color: white;
+    transform: rotateY(180deg);
+}
 
-            .bottom-row-2 {
-                display: grid;
-                grid-template-columns: repeat(5, 1fr);
-                gap: 1.2rem;
-                justify-items: center;
-            }
+/* CORRECCIÓN CRÍTICA: Centrado perfecto de iconos */
+.service-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--white);
+    font-size: 2rem;
+    line-height: 1; /* AÑADIDO: Elimina espaciado extra */
+    flex-shrink: 0; /* AÑADIDO: Previene que se deforme */
+}
 
-            .technical-card {
-                width: 100%;
-                max-width: 200px;
-                background: var(--white);
-                border-radius: 12px;
-                padding: 1.5rem 1rem;
-                text-align: center;
-                box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-                transition: all 0.3s ease;
-                border: 2px solid transparent;
-                cursor: pointer;
-            }
+.flip-card-back .service-icon {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
 
-            .technical-card:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-                border-color: var(--primary-blue);
-            }
+/* CORRECCIÓN: Textos con altura consistente */
+.service-card h3 {
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    font-weight: 600;
+    min-height: 2.6rem; /* AÑADIDO: Altura mínima para consistencia */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
-            .technical-card .service-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.4rem;
-                margin-bottom: 1rem;
-            }
+.flip-card-back h3 {
+    color: white;
+    min-height: 2.6rem; /* AÑADIDO: Misma altura mínima */
+}
 
-            .technical-card h4 {
-                color: var(--dark-blue);
-                margin-bottom: 0.8rem;
-                font-size: 0.95rem;
-                line-height: 1.2;
-                font-weight: 600;
-            }
+.service-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0; /* AÑADIDO: Elimina márgenes inconsistentes */
+}
 
-            .technical-card p {
-                color: var(--text-light);
-                font-size: 0.85rem;
-                line-height: 1.4;
-            }
+.flip-card-back p {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    text-align: center;
+    margin: 0; /* AÑADIDO: Elimina márgenes inconsistentes */
+}
 
-            /* Servicios de alquiler - diferente estilo */
-            .rental-card {
-                border-left: 4px solid var(--light-blue);
-            }
+/* Contenedor inferior - servicios técnicos */
+.bottom-services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
 
-            .rental-card .service-icon {
-                background: linear-gradient(135deg, var(--light-blue) 0%, var(--primary-blue) 100%);
-            }
+.bottom-row-1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+    align-items: stretch; /* AÑADIDO: Altura consistente */
+}
 
-            /* Versión móvil */
-            .mobile-services {
-                display: none;
-                flex-direction: column;
-                gap: 1.5rem;
-                padding: 1rem;
-            }
+.bottom-row-2 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.2rem;
+    justify-items: center;
+    align-items: stretch; /* AÑADIDO: Altura consistente */
+}
 
-            .mobile-service-card {
-                display: flex;
-                gap: 1rem;
-                padding: 1.5rem;
-                background: var(--white);
-                border-radius: 12px;
-                align-items: flex-start;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-                border-left: 4px solid var(--primary-blue);
-                transition: all 0.3s ease;
-            }
+.technical-flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    width: 100%;
+    max-width: 200px;
+    height: 220px; /* CAMBIADO: Altura fija más grande */
+    cursor: pointer;
+}
 
-            .mobile-service-card:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-            }
+.technical-flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
 
-            .mobile-service-card .service-icon {
-                width: 55px;
-                height: 55px;
-                font-size: 1.4rem;
-                margin: 0;
-                flex-shrink: 0;
-            }
+.technical-flip-card:hover .technical-flip-card-inner {
+    transform: rotateY(180deg);
+}
 
-            .mobile-content h3,
-            .mobile-content h4 {
-                color: var(--dark-blue);
-                margin-bottom: 0.5rem;
-                font-size: 1.1rem;
-            }
+.technical-flip-card-front, .technical-flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
 
-            .mobile-content p {
-                color: var(--text-light);
-                font-size: 0.95rem;
-                line-height: 1.5;
-                margin: 0;
-            }
+.technical-flip-card-front {
+    background: var(--white);
+    border: 2px solid transparent;
+}
 
-            .section-title {
-                text-align: center;
-                margin: 2rem 0 1rem;
-                color: var(--dark-blue);
-                font-size: 1.3rem;
-                position: relative;
-                padding: 0 2rem;
-            }
+.technical-flip-card-back {
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--primary-blue) 100%);
+    color: white;
+    transform: rotateY(180deg);
+}
 
-            .section-title::before,
-            .section-title::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                width: 50px;
-                height: 2px;
-                background: var(--light-blue);
-            }
+.rental-card .technical-flip-card-front {
+    border-left: 4px solid var(--light-blue);
+}
 
-            .section-title::before {
-                left: 0;
-            }
+/* CORRECCIÓN: Iconos técnicos centrados */
+.technical-card .service-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    line-height: 1; /* AÑADIDO: Elimina espaciado extra */
+    flex-shrink: 0; /* AÑADIDO: Previene deformación */
+}
 
-            .section-title::after {
-                right: 0;
-            }
+.technical-flip-card-back .service-icon {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
 
-            /* Media Queries */
+/* CORRECCIÓN: Títulos técnicos con altura consistente */
+.technical-card h4 {
+    color: var(--dark-blue);
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    font-weight: 600;
+    min-height: 2.4rem; /* AÑADIDO: Altura mínima consistente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
-            /* Tablets grandes (1024px - 1199px) */
-            @media (max-width: 1199px) {
-                .top-services-container {
-                    max-width: 900px;
-                    gap: 1.5rem;
-                }
-                
-                .service-card {
-                    padding: 1.5rem 1rem;
-                }
-                
-                .bottom-row-2 {
-                    gap: 1rem;
-                }
-                
-                .technical-card {
-                    max-width: 180px;
-                    padding: 1.2rem 0.8rem;
-                }
-            }
+.technical-flip-card-back h4 {
+    color: white;
+    min-height: 2.4rem; /* AÑADIDO: Misma altura mínima */
+}
 
-            /* Tablets (768px - 1023px) */
-            @media (max-width: 1023px) {
-                .mindmap-container {
-                    display: none;
-                }
-                
-                .mobile-services {
-                    display: flex;
-                }
-                
-                .title-sphere {
-                    width: 180px;
-                    height: 180px;
-                }
-                
-                .title-sphere i {
-                    font-size: 3rem;
-                }
-                
-                .mobile-service-card {
-                    flex-direction: column;
-                    text-align: center;
-                    padding: 2rem 1.5rem;
-                    align-items: center;           /* Centra elementos flex */
-                    justify-content: center;       /* Centra contenido verticalmente */
+.technical-card p {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    text-align: center;
+    margin: 0; /* AÑADIDO: Elimina márgenes inconsistentes */
+}
 
-                }
-                
-                .mobile-service-card .service-icon {
-                    align-self: center;
-                    margin-bottom: 1rem;
-                }
-            }
+.technical-flip-card-back p {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    text-align: center;
+    margin: 0; /* AÑADIDO: Elimina márgenes inconsistentes */
+}
 
-            /* Tablets pequeños (600px - 767px) */
-            @media (max-width: 767px) {
-                body {
-                    padding: 1rem;
-                }
-                
-                .main-title {
-                    margin-bottom: 2rem;
-                }
-                
-                .title-sphere {
-                    width: 150px;
-                    height: 150px;
-                }
-                
-                .title-sphere i {
-                    font-size: 2.5rem;
-                }
-                
-                .title-sphere .title-text {
-                    font-size: 1rem;
-                }
-                
-                .mobile-services {
-                    gap: 1.2rem;
-                    padding: 0.5rem;
-                }
-                
-                .mobile-service-card {
-                    flex-direction: row;
-                    text-align: left;
-                    padding: 1.2rem;
-                    gap: 0.8rem;
-                }
-                
-                .mobile-service-card .service-icon {
-                    width: 50px;
-                    height: 50px;
-                    font-size: 1.2rem;
-                    margin: 0;
-                    align-self: flex-start;
-                }
-            }
+/* CORRECCIÓN: Versión móvil mejorada */
+.mobile-services {
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+}
 
-            /* Móviles (480px - 599px) */
-            @media (max-width: 599px) {
-                .title-sphere {
-                    width: 130px;
-                    height: 130px;
-                }
-                
-                .title-sphere i {
-                    font-size: 2.2rem;
-                }
-                
-                .title-sphere .title-text {
-                    font-size: 0.9rem;
-                }
-                
-                .mobile-service-card {
-                    padding: 1rem;
-                }
-                
-                .mobile-content h3,
-                .mobile-content h4 {
-                    font-size: 1rem;
-                }
-                
-                .mobile-content p {
-                    font-size: 0.9rem;
-                }
-                
-                .section-title {
-                    font-size: 1.2rem;
-                    padding: 0 1.5rem;
-                }
-                
-                .section-title::before,
-                .section-title::after {
-                    width: 30px;
-                }
-            }
+.mobile-flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    width: 100%;
+    height: 130px; /* CAMBIADO: Altura fija más consistente */
+    cursor: pointer;
+}
 
-            /* Móviles pequeños (max-width: 479px) */
-            @media (max-width: 479px) {
-                body {
-                    padding: 0.5rem;
-                }
-                
-                .title-sphere {
-                    width: 120px;
-                    height: 120px;
-                }
-                
-                .title-sphere i {
-                    font-size: 2rem;
-                }
-                
-                .title-sphere .title-text {
-                    font-size: 0.8rem;
-                }
-                
-                .mobile-services {
-                    gap: 1rem;
-                    padding: 0.25rem;
-                }
-                
-                .mobile-service-card {
-                    padding: 0.8rem;
-                    gap: 0.6rem;
-                }
-                
-                .mobile-service-card .service-icon {
-                    width: 45px;
-                    height: 45px;
-                    font-size: 1.1rem;
-                }
-                
-                .mobile-content h3,
-                .mobile-content h4 {
-                    font-size: 0.95rem;
-                    margin-bottom: 0.3rem;
-                }
-                
-                .mobile-content p {
-                    font-size: 0.85rem;
-                    line-height: 1.4;
-                }
-                
-                .section-title {
-                    font-size: 1.1rem;
-                    padding: 0 1rem;
-                }
-                
-                .section-title::before,
-                .section-title::after {
-                    width: 20px;
-                }
-            }
+.mobile-flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
 
+.mobile-flip-card:hover .mobile-flip-card-inner,
+.mobile-flip-card:active .mobile-flip-card-inner {
+    transform: rotateY(180deg);
+}
 
+.mobile-flip-card-front, .mobile-flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    align-items: center; /* CAMBIADO: Centrado vertical perfecto */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
 
+.mobile-flip-card-front {
+    background: var(--white);
+    border-left: 4px solid var(--primary-blue);
+}
 
+.mobile-flip-card-back {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+    color: white;
+    transform: rotateY(180deg);
+    border-left: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+/* CORRECCIÓN: Iconos móviles perfectamente centrados */
+.mobile-service-card .service-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.4rem;
+    margin: 0;
+    flex-shrink: 0;
+    line-height: 1; /* AÑADIDO: Elimina espaciado extra */
+}
+
+.mobile-flip-card-back .service-icon {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.mobile-content {
+    flex: 1;
+    display: flex; /* AÑADIDO: Control total del contenido */
+    flex-direction: column;
+    justify-content: center;
+    min-height: 0; /* AÑADIDO: Previene overflow */
+}
+
+.mobile-content h3,
+.mobile-content h4 {
+    color: var(--dark-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    margin-top: 0; /* AÑADIDO: Elimina margen superior */
+}
+
+.mobile-flip-card-back .mobile-content h3,
+.mobile-flip-card-back .mobile-content h4 {
+    color: white;
+}
+
+.mobile-content p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.mobile-flip-card-back .mobile-content p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Títulos de sección mejorados */
+.section-title {
+    text-align: center;
+    margin: 2rem 0 1rem;
+    color: var(--dark-blue);
+    font-size: 1.3rem;
+    position: relative;
+    padding: 0 2rem;
+    font-weight: 600; /* AÑADIDO: Más peso visual */
+}
+
+.section-title::before,
+.section-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 2px;
+    background: var(--light-blue);
+    transform: translateY(-50%); /* AÑADIDO: Centrado perfecto */
+}
+
+.section-title::before {
+    left: 0;
+}
+
+.section-title::after {
+    right: 0;
+}
+
+/* MEDIA QUERIES MEJORADAS */
+@media (max-width: 1199px) {
+    .top-services-container {
+        max-width: 900px;
+        gap: 1.5rem;
+    }
+    
+    .flip-card {
+        height: 270px; /* AJUSTADO: Altura proporcional */
+    }
+    
+    .technical-flip-card {
+        max-width: 180px;
+        height: 210px; /* AJUSTADO: Altura proporcional */
+    }
+    
+    .bottom-row-2 {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 1023px) {
+    .mindmap-container {
+        display: none;
+    }
+    
+    .mobile-services {
+        display: flex;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .mobile-services {
+        gap: 1.2rem;
+        padding: 0.5rem;
+    }
+    
+    .mobile-flip-card {
+        height: 120px; /* AJUSTADO: Altura consistente */
+    }
+    
+    .mobile-flip-card-front, .mobile-flip-card-back {
+        padding: 1.2rem;
+        gap: 0.8rem;
+    }
+    
+    .mobile-service-card .service-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 599px) {
+    .mobile-flip-card {
+        height: 115px; /* AJUSTADO: Altura consistente */
+    }
+    
+    .mobile-flip-card-front, .mobile-flip-card-back {
+        padding: 1rem;
+    }
+    
+    .mobile-content h3,
+    .mobile-content h4 {
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .mobile-content p {
+        font-size: 0.9rem;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+        padding: 0 1.5rem;
+    }
+    
+    .section-title::before,
+    .section-title::after {
+        width: 30px;
+    }
+}
+
+@media (max-width: 479px) {
+    body {
+        padding: 0.5rem;
+    }
+    
+    .mobile-services {
+        gap: 1rem;
+        padding: 0.25rem;
+    }
+    
+    .mobile-flip-card {
+        height: 110px; /* AJUSTADO: Altura consistente */
+    }
+    
+    .mobile-flip-card-front, .mobile-flip-card-back {
+        padding: 0.8rem;
+        gap: 0.6rem;
+    }
+    
+    .mobile-service-card .service-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .mobile-content h3,
+    .mobile-content h4 {
+        font-size: 0.95rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .mobile-content p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    .section-title {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+    
+    .section-title::before,
+    .section-title::after {
+        width: 20px;
+    }
+}
+
+/* Touch devices - activar flip con tap */
+@media (hover: none) and (pointer: coarse) {
+    .flip-card:active .flip-card-inner,
+    .technical-flip-card:active .technical-flip-card-inner,
+    .mobile-flip-card:active .mobile-flip-card-inner {
+        transform: rotateY(180deg);
+    }
+}
 
 
 
