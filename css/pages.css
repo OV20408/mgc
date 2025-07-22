@@ -3,7 +3,7 @@
 /* Page Hero Section */
 .page-hero {
     position: relative;
-    height: 60vh;
+    height: 70vh;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -98,10 +98,16 @@
 }
 
 .profile-content p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.8;
     color: #333;
     margin-bottom: 1.5rem;
+}
+
+.profile-content strong{
+    color: var(--primary-blue);
+    font-weight: bold;
+
 }
 
 /* Contenedor de imagen mejorado */
@@ -403,7 +409,7 @@
 
 .experience-intro {
     text-align: left;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     max-width: 100%;
     color: #333;
     margin-bottom: 3rem;
@@ -499,27 +505,31 @@
 
 
 
-.mvv-item h3 {
+.profile-content h2 {
+    font-size: 2.5rem;
     color: var(--dark-blue);
-    font-size: 2.7rem;
-    text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     position: relative;
+    padding-bottom: 0.5rem;
 }
 
-
-
-/* La línea debajo del título - alineada a la izquierda como en "NUESTRA VISIÓN" */
-.mvv-item h3::after {
+.profile-content h2::after {
     content: '';
     position: absolute;
-    bottom: -10px; /* Distancia desde el texto */
-    left: 50%; /* Centra horizontalmente */
-    transform: translateX(-50%); /* Centra la línea respecto al texto */
+    bottom: 0;
+    left: 0;
     width: 80px;
     height: 4px;
     background-color: var(--primary-blue);
 }
+
+
+
+.mvv-item .title-line{
+    height: 4px;
+}
+
+
 
 
 
@@ -656,6 +666,12 @@
     margin: 0 auto;
     color: #333;
     line-height: 1.8;
+}
+
+/*DISEÑO DE RAMIRO DEL BOLD*/
+.services-intro strong{
+    color: var(--primary-blue);
+    font-weight: bold;
 }
 
 .services-main {
@@ -1566,7 +1582,6 @@
         }
 
         .btn-outline:hover {
-            background: var(--white);
             color: var(--primary-blue);
             transform: translateY(-2px);
         }
@@ -2733,7 +2748,7 @@
 .title-line {
     flex: 1;
     height: 2px;
-    background-color: var(--light-blue);
+    background-color: var(--primary-blue);
     max-width: 100px;
 }
 
@@ -2752,7 +2767,7 @@
 
 .support-main-description strong {
     color: var(--primary-blue);
-    font-weight: 600;
+    font-weight: bold;
 }
 
 @media (max-width: 768px) {
