@@ -1865,7 +1865,7 @@
         }
 
         .professional-title-3 h2 {
-            font-size: 2.6rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-blue);
             margin: 0;
@@ -1892,6 +1892,15 @@
             font-weight: 300;
             font-style: italic;
         }
+
+        .mindmap-container .professional-title-3-sub {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin: 0;
+            position: relative;
+        }
+
 
         /* Responsivo */
         @media (max-width: 768px) {
@@ -1962,6 +1971,8 @@
     max-width: 1000px;
     align-items: stretch; /* AÑADIDO: Hace que todas las cards tengan la misma altura */
 }
+
+
 
 /* 3D Flip Card Wrapper */
 .flip-card {
@@ -2090,6 +2101,19 @@
     justify-items: center;
     align-items: stretch; /* AÑADIDO: Altura consistente */
 }
+
+
+
+.middle-services-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    align-items: stretch; /* AÑADIDO: Hace que todas las cards tengan la misma altura */
+}
+
+
 
 .technical-flip-card {
     background-color: transparent;
