@@ -68,7 +68,7 @@
 
 .profile-wrapper {
     display: flex;
-    align-items: center; /* Centrar verticalmente */
+    align-items: flex-start; /* Centrar verticalmente */
     gap: 3rem;
 }
 
@@ -715,6 +715,7 @@
     line-height: 1.6;
     margin-bottom: 2rem;
 }
+
 
 /* Training Page Styles */
 .training-intro {
@@ -1703,7 +1704,11 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+    margin: 2rem 0;
+
 }
+
 
 .accordion-button {
     width: 100%;

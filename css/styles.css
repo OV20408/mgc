@@ -1040,6 +1040,8 @@ body {
     line-height: 1.7;
 }
 
+
+
 .tech-slider-section .objectives-list {
     list-style: none;
     padding: 0;
@@ -1048,15 +1050,15 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .tech-slider-section .objectives-list li {
     position: relative;
-    padding: 1.2rem 1.8rem;
+    padding: 2rem 1.5rem 1.5rem;
     background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
-    border: 2px solid var(--light-blue);
-    border-radius: 25px;
+    border: 3px solid var(--light-blue);
+    border-radius: 15px;
     box-shadow: 0 4px 15px rgba(17, 126, 167, 0.15);
     color: var(--dark-blue);
     font-size: 1rem;
@@ -1064,14 +1066,12 @@ body {
     text-align: center;
     min-width: 220px;
     flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: all 0.3s ease;
 }
 
 .tech-slider-section .objectives-list li:hover {
     transform: translateY(-3px);
+    border-color: var(--primary-blue);
     background: linear-gradient(135deg, var(--light-blue) 0%, var(--primary-blue) 100%);
     color: var(--white);
     box-shadow: 0 6px 25px rgba(17, 126, 167, 0.3);
@@ -1082,15 +1082,23 @@ body {
     background-image: url('img/arrow-icon.png');
     background-size: contain;
     background-repeat: no-repeat;
-    width: 20px;
-    height: 20px;
-    margin-right: 0.5rem;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    border-radius: 50%;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(17, 126, 167, 0.2);
     filter: brightness(0) saturate(100%) invert(13%) sepia(86%) saturate(4637%) hue-rotate(205deg) brightness(0.8);
-    transition: filter 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .tech-slider-section .objectives-list li:hover::before {
-    filter: brightness(0) invert(1); /* Hace que la flecha sea blanca en hover */
+    background-color: var(--green);
+    filter: brightness(0) invert(1);
 }
 
 
