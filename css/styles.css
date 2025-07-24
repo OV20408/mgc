@@ -977,7 +977,6 @@ body {
     top: 0.1rem;
 }
 
-
 .objectives-list {
     list-style: none;
     padding-left: 1.5rem;
@@ -986,24 +985,48 @@ body {
 
 .objectives-list li {
     position: relative;
-    padding-left: 2rem; /* Aumenté un poco para dar más espacio */
+    padding-left: 2rem;
     margin-bottom: 0.5rem;
+    /* Agregamos transición suave para todas las propiedades */
+    transition: transform 0.2s ease-out, color 0.2s ease-out, font-weight 0.2s ease-out;
+    cursor: pointer; /* Indicador visual de interactividad */
+    /* Mejora la experiencia en dispositivos táctiles */
+    -webkit-tap-highlight-color: transparent;
 }
 
 .objectives-list li::before {
     content: "";
-    background-image: url('/img/arrow-bullet-v3-nbg.png'); /* Ruta a tu imagen */
+    background-image: url('/img/arrow-bullet-v3-nbg.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
     left: 0;
-    top: 0.3rem; /* Ajusta según necesites para centrar */
-    width: 20px; /* Ajusta el tamaño */
-    height: 20px; /* Ajusta el tamaño */
+    top: 0.3rem;
+    width: 20px;
+    height: 20px;
+    /* Transición para el pseudo-elemento también */
+    transition: transform 0.2s ease-out;
 }
 
+.objectives-list li:hover {
+    color: var(--primary-blue);
+    font-weight: 600;
+    /* Zoom sutil del 105% - se ve profesional sin ser exagerado */
+    transform: scale(1.05);
+}
 
+.objectives-list li:hover::before {
+    /* El bullet también se escala ligeramente */
+    transform: scale(1.1);
+}
+
+/* Animación más suave en dispositivos que soporten hover */
+@media (hover: hover) {
+    .objectives-list li:hover {
+        transform: scale(1.05) translateX(5px); /* Combinamos zoom con desplazamiento */
+    }
+}
 
 
 .other-required {
