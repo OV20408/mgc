@@ -1833,8 +1833,8 @@
     font-size: 2rem;
 }
 
-.title-line {
-    height: 2px;
+.support-title-wrapper .title-line {
+    height: 4px;
     background: var(--primary-blue);
     flex: 1;
     max-width: 100px;
@@ -2699,8 +2699,8 @@
     max-width: 800px;
     margin: 0 auto;
     color: #555;
-    line-height: 1.6;
-    font-size: 1.1rem;
+    line-height: 1.7;
+    font-size: 1.2rem;
 }
 
 .support-main-description strong {
