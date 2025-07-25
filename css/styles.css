@@ -997,7 +997,7 @@ body {
 
 .objectives-list li::before {
     content: "";
-    background-image: url('img/arrow-bullet-v3-nbg.png');
+    background-image: url('../img/arrow-bullet-v3-nbg.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
