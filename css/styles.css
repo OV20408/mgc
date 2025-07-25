@@ -981,22 +981,23 @@ body {
     list-style: none;
     padding-left: 1.5rem;
     margin: 1rem 0;
+    font-size: 1.2rem;
+    color: #333;
+    font-style: italic;
 }
 
 .objectives-list li {
     position: relative;
     padding-left: 2rem;
     margin-bottom: 0.5rem;
-    /* Agregamos transición suave para todas las propiedades */
     transition: transform 0.2s ease-out, color 0.2s ease-out, font-weight 0.2s ease-out;
     cursor: pointer; /* Indicador visual de interactividad */
-    /* Mejora la experiencia en dispositivos táctiles */
     -webkit-tap-highlight-color: transparent;
 }
 
 .objectives-list li::before {
     content: "";
-    background-image: url('/img/arrow-bullet-v3-nbg.png');
+    background-image: url('img/arrow-bullet-v3-nbg.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -1059,7 +1060,7 @@ body {
     color: #555;
     max-width: 800px;
     margin: 0 auto 3rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.7;
 }
 
@@ -1102,7 +1103,6 @@ body {
 
 .tech-slider-section .objectives-list li::before {
     content: "";
-    background-image: url('img/arrow-icon.png');
     background-size: contain;
     background-repeat: no-repeat;
     width: 24px;
