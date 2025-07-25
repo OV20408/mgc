@@ -1644,6 +1644,8 @@
     border: 2px solid var(--light-blue);
 }
 
+
+
 .flip-card-back {
     background-color: var(--primary-blue);
     color: var(--white);
@@ -2300,7 +2302,7 @@
 
 @media (max-width: 479px) {
     body {
-        padding: 0.5rem;
+        padding: 0;
     }
     
     .mobile-services {
@@ -2500,12 +2502,6 @@
 
 
 /* Versión mobile servicios */
-.support-services-mobile {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 3rem;
-}
 
 .support-service {
     display: flex;
@@ -2516,6 +2512,9 @@
     border-radius: 10px;
     align-items: flex-start;
 }
+
+
+
 
 /* SOLUCIÓN 1: Altura fija para todas las tarjetas */
 .flip-card {
@@ -2532,8 +2531,9 @@
 }
 
 .service-icon {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
+    /* background-color: var(--primary-blue); */
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
     border-radius: 50%;
     display: grid;
@@ -2543,6 +2543,8 @@
     flex-shrink: 0;
     font-style: normal;
     font-variant: normal;
+    margin: 0 auto 1.5rem auto; /* centra horizontalmente */
+
     text-rendering: auto;
     margin-bottom: 1.5rem;
     /* REMOVIDO: margin: 0 auto 1.5rem; */
@@ -2577,6 +2579,12 @@
     justify-self: center; /* Centra horizontalmente en grid */
     margin-bottom: 1.5rem;
 }
+
+
+
+
+
+
 
 .support-service h3 {
     color: var(--dark-blue);
@@ -2620,10 +2628,7 @@
         height: 400px;
     }
     
-    .service-node {
-        width: 180px;
-        padding: 4rem;
-    }
+
     
     .line-1, .line-2, .line-3, .line-4 {
         width: 200px;
@@ -2665,11 +2670,6 @@
 .service-node {
     animation: float 4s ease-in-out infinite;
 }
-
-.node-1 { animation-delay: 0s; }
-.node-2 { animation-delay: 0.5s; }
-.node-3 { animation-delay: 1s; }
-.node-4 { animation-delay: 1.5s; }
 
 
 
@@ -2818,6 +2818,184 @@
 
 
 
+/* ESTILOS MÓVILES */
+        .mobile-section {
+            display: none;
+        }
+
+        .mobile-mindmap-container {
+            margin: 40px 0;
+        }
+
+        .mobile-professional-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .mobile-professional-title h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            position: relative;
+            display: inline-block;
+            padding: 0 20px;
+        }
+
+        .mobile-professional-title h2::before,
+        .mobile-professional-title h2::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 2px;
+            /* background-color: var(--primary-blue); */
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);        
+        }
+
+        .mobile-professional-title h2::before {
+            left: -40px;
+        }
+
+        .mobile-professional-title h2::after {
+            right: -40px;
+        }
+
+        .mobile-services-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mobile-service-card {
+/*             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);        */          
+            border-radius: 12px;
+            background-color: white;
+            padding: 20px;
+            color: white;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .mobile-service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-service-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+        .mobile-service-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);        
+            opacity: 0.9;
+            padding: 17px 20px;
+            border-radius: 50%;
+        }
+        
+
+        .mobile-service-card h3 {
+            font-size: 1.1rem;
+            font-weight: bold;
+            line-height: 1.3;
+            margin: 0;
+            color: var(--dark-blue);
+        }
+
+        .mobile-service-description {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            opacity: 0.95;
+            color: #333;     
+            text-align: center;   
+        }
+
+        /* Media Queries */
+        @media (max-width: 1023px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .support-content {
+                padding: 0;
+            }
+
+            .support-section {
+                padding: 25px 20px;
+                border-radius: 15px;
+            }
+
+            .support-main-title {
+                font-size: 1.8rem;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .title-line {
+                width: 60px;
+                margin: 0;
+            }
+
+            .title-text {
+                text-align: center;
+                white-space: normal;
+                font-size: 1.5rem;
+            }
+
+            .support-main-description {
+                font-size: 1rem;
+                text-align: center;
+            }
+
+            /* Ocultar versión desktop en móvil */
+            .mindmap-container {
+                display: none;
+            }
+
+            /* Mostrar versión móvil */
+            .mobile-section {
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .support-section {
+                padding: 20px 15px;
+            }
+
+            .support-main-title {
+                font-size: 1.5rem;
+            }
+
+            .title-text {
+                font-size: 1.3rem;
+            }
+
+            .mobile-professional-title h2 {
+                font-size: 1.3rem;
+            }
+
+            .mobile-service-card {
+                padding: 15px;
+            }
+
+            .mobile-service-icon {
+                font-size: 1.8rem;
+            }
+
+            .mobile-service-card h3 {
+                font-size: 1rem;
+                text-align: center;
+            }
+
+            .mobile-service-description {
+                font-size: 0.85rem;
+            }
+        }
 
 
 
