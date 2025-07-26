@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const FADE_TIME      = 1000;           // ms de la transición CSS (opacity)
   const PAUSE_ON_HOVER = true;           // ponlo en false si no lo quieres
   const MAX_LOAD_WAIT  = 2000;           // tiempo máximo de espera para las imágenes
-  /* ------------------------------------ */
 
   /* -----------  ELEMENTOS  ------------ */
   const slides      = [...document.querySelectorAll('.hero-slide')];
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const playPauseBtn= document.querySelector('.hero-control.pause-play');
   
   if (!slides.length || !prevBtn || !nextBtn) return;   // no hay carrusel
-  /* ------------------------------------ */
 
   let index          = 0;      // slide actual
   let autoTimer      = null;   // id del setInterval
@@ -24,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let playing        = true;   // estado de autoplay
   let initialized    = false;  // control de inicialización
 
-  /* ============  IMPROVED IMAGE LOADING  ============ */
   const checkImageLoaded = (img) => {
     return img.complete && img.naturalHeight !== 0;
   };
@@ -57,10 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       images.forEach(img => {
         if (checkImageLoaded(img)) {
-          // Imagen ya cargada (probablemente en caché)
           checkAllLoaded();
         } else {
-          // Configurar listeners para imágenes no cargadas
           const onLoad = () => {
             img.removeEventListener('load', onLoad);
             img.removeEventListener('error', onError);
@@ -77,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
           img.addEventListener('load', onLoad);
           img.addEventListener('error', onError);
           
-          // Forzar recarga si la imagen no tiene src válida
           if (!img.src) {
             console.warn('Imagen sin src válida:', img);
             checkAllLoaded();
@@ -87,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  /* ============  FUNCTIONS  ============ */
   const lock = () => { 
     locked = true; 
     setTimeout(() => locked = false, FADE_TIME); 
@@ -152,14 +145,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Nueva función para verificar si ya estamos en la página correcta
   const isOnHeroPage = () => {
     return document.querySelector('.hero') !== null;
   };
 
-  /* ============  INITIALIZATION  ============ */
   const initCarousel = async () => {
-    // Verificar que estemos en la página correcta
     if (!isOnHeroPage()) {
       console.log('No se encontró elemento hero, saltando inicialización');
       return;
@@ -168,16 +158,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const hero = document.querySelector('.hero');
     
     try {
-      // Aplicar estado inicial inmediatamente
       updateUI();
       
-      // Precargar imágenes con timeout
       await preloadImages();
       
       // Marcar como inicializado
       initialized = true;
       
-      // Iniciar autoplay después de un breve delay
       setTimeout(() => {
         if (initialized && isOnHeroPage()) {
           startAuto();
@@ -188,7 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
       
     } catch (error) {
       console.warn('Error durante la inicialización:', error);
-      // Inicializar de todas formas
       initialized = true;
       updateUI();
       startAuto();
@@ -196,9 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  /* -----------  EVENTOS  --------------- */
   const setupEventListeners = () => {
-    // Botones de navegación
     nextBtn.addEventListener('click', e => { 
       e.preventDefault(); 
       if (initialized) {
@@ -289,10 +273,8 @@ document.addEventListener('DOMContentLoaded', () => {
     playing = false;
   };
 
-  // Cleanup cuando se navega a otra página
   window.addEventListener('beforeunload', cleanup);
   
-  // En caso de navegación SPA, también limpia cuando se oculta
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       cleanup();
@@ -314,5 +296,4 @@ document.addEventListener('DOMContentLoaded', () => {
     forceInit: initCarousel,
     cleanup: cleanup
   };
-  /* ------------------------------------ */
 });

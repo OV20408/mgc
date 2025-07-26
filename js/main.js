@@ -1,5 +1,4 @@
 //this is main.js
-// Main JavaScript functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const hamburger = document.querySelector('.hamburger');
@@ -36,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
     //     setInterval(nextSlide, 5000);
     // }
     
-    // Smooth scrolling for anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     anchorLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -51,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Header scroll effect
     const header = document.querySelector('.header');
     if (header) {
         window.addEventListener('scroll', function() {
@@ -65,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Animate elements on scroll
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -134,12 +130,10 @@ function closeModal(modalId) {
 
 
 function changeImage(mainId, imageName, element) {
-    // Cambia la imagen principal
     const mainImage = document.getElementById(mainId);
     if (mainImage) {
         mainImage.src = imageName;
     }
-    // Quita la clase 'active' de todos los thumbnails hermanos
     if (element && element.parentElement) {
         const siblings = element.parentElement.querySelectorAll('.thumbnail');
         siblings.forEach(thumb => thumb.classList.remove('active'));
@@ -148,7 +142,6 @@ function changeImage(mainId, imageName, element) {
 }
 
 
-// Close modal when clicking outside
 document.addEventListener('click', function(e) {
     if (e.target.classList.contains('modal')) {
         closeModal(e.target.id);
@@ -168,8 +161,6 @@ document.addEventListener('keydown', function(e) {
 
 
 
-//quienesomos fading animation
-// Configuración del Intersection Observer para el efecto fade
 document.addEventListener('DOMContentLoaded', function() {
     // Opciones del observer
     const observerOptions = {
@@ -184,22 +175,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 entry.target.classList.add('visible');
                 // Opcional: dejar de observar después de la primera vez
                 // observer.unobserve(entry.target);
-            } else {
-                // Opcional: remover la clase si quieres que se repita la animación
-                // entry.target.classList.remove('visible');
+            } 
+            
+            else {
             }
         });
     };
 
-    // Crear el observer
     const fadeObserver = new IntersectionObserver(fadeInCallback, observerOptions);
 
-    // Seleccionar elementos a observar
     const elementsToFade = document.querySelectorAll(
         '.company-profile, .values-section, .experience-section, .team-member, .value-card'
     );
 
-    // Añadir la clase inicial y observar cada elemento
     elementsToFade.forEach(element => {
         element.classList.add('scroll-fade', 'scroll-fade-up');
         fadeObserver.observe(element);

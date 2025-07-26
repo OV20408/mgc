@@ -1012,7 +1012,7 @@ body {
 
 .objectives-list li:hover {
     color: var(--primary-blue);
-    font-weight: 600;
+    font-weight: 800;
     /* Zoom sutil del 105% - se ve profesional sin ser exagerado */
     transform: scale(1.05);
 }

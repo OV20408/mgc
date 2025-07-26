@@ -13,11 +13,9 @@ function checkEmailJSReady() {
     return true;
 }
 
-// Contact form handling
 function handleSubmit(event) {
     event.preventDefault();
     
-    // Verificar EmailJS
     if (!checkEmailJSReady()) {
         alert('Error: Servicio de correo no disponible. Por favor, recarga la página.');
         return;
@@ -32,21 +30,19 @@ function handleSubmit(event) {
         return;
     }
     
-    // Mostrar estado de carga
     submitButton.disabled = true;
     submitButton.textContent = 'Enviando...';
     
     // Preparar datos para EmailJS - CORREGIDO para coincidir con el template
     const templateParams = {
-            name: form.nombre_completo.value,        // Usamos el nombre completo
-            from_name: form.nombre_completo.value,   // Usamos el nombre completo
+            name: form.nombre_completo.value,        
+            from_name: form.nombre_completo.value,   
             from_email: form.email.value,
             phone: form.telefono.value || 'No proporcionado',
             subject: form.asunto.value,
             message: form.mensaje.value
     };
     
-    // Debug: mostrar los datos que se enviarán
     console.log('Enviando datos:', templateParams);
     console.log('Service ID:', SERVICE_ID);
     console.log('Template ID:', TEMPLATE_ID);
@@ -88,13 +84,11 @@ function handleSubmit(event) {
             
             alert(errorMessage);
             
-            // Restaurar botón
             submitButton.disabled = false;
             submitButton.textContent = 'Enviar Mensaje';
         });
 }
 
-// Función de validación
 function validateForm(form) {
     const requiredFields = ['nombre_completo', 'email', 'asunto', 'mensaje'];
     let isValid = true;
@@ -122,7 +116,6 @@ function validateForm(form) {
     return isValid;
 }
 
-// Add form styles for better UX
 document.addEventListener('DOMContentLoaded', function() {
     // Verificar configuración
     console.log('Configuración EmailJS:');
@@ -130,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('- Service ID:', SERVICE_ID);
     console.log('- Template ID:', TEMPLATE_ID);
     
-    // Verificar que los IDs estén configurados
     if (SERVICE_ID === 'TU_SERVICE_ID_CORRECTO' || TEMPLATE_ID === 'TU_TEMPLATE_ID_CORRECTO') {
         console.error('⚠️ ADVERTENCIA: Debes configurar los IDs correctos del dashboard');
         alert('Error de configuración: Los IDs de EmailJS no están configurados correctamente. Revisa el archivo contact.js');
@@ -138,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('✅ IDs configurados correctamente');
     }
     
-    // Verificar que EmailJS esté disponible al cargar la página
     if (!checkEmailJSReady()) {
         console.error('EmailJS no está disponible');
     } else {
@@ -166,7 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Función para probar la configuración
 function testEmailJS() {
     const testParams = {
         name: 'Test User',

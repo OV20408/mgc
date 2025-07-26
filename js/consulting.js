@@ -26,12 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
             let isValid = true;
             
             inputs.forEach(input => {
-                // Limpieza básica de entradas
                 if (input.value) {
                     input.value = input.value.replace(/</g, '&lt;').replace(/>/g, '&gt;');
                 }
                 
-                // Validación requerida
                 if (input.required && !input.value.trim()) {
                     input.classList.add('error');
                     isValid = false;
