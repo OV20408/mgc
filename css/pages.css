@@ -2038,7 +2038,7 @@
 
 .bottom-services-container{
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
     width: 100%;
     max-width: 1000px;
@@ -2935,6 +2935,8 @@
 @media (max-width: 768px) {
     .page-hero h1 {
         font-size: 2.5rem;
+        padding-top: 1.6rem;
+
     }
     
     .team-member {
@@ -3079,6 +3081,8 @@
         .mobile-service-card h3 {
             font-size: 1.1rem;
             font-weight: bold;
+            text-align: center;
+            padding-top: 1.1rem;
             line-height: 1.3;
             margin: 0;
             color: var(--dark-blue);

@@ -1173,6 +1173,33 @@ body {
     padding: 0 20px;
     font-weight: 600;
     text-align: center;
+    font-size: 15px;
+}
+
+/* Gradiente superior para el texto de arriba */
+.swiper-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+    z-index: 1;
+}
+
+/* Estilo para el texto superior */
+.slide-title {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    color: white;
+    z-index: 2;
+    padding: 0 20px;
+    font-weight: 700;
+    font-size: 1.2em;
+    text-align: center;
 }
 
 .swiper-slide:hover {
