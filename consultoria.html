@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/consulting.css">
     <link rel="icon" href="img/Logo compacto-icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <!-- Loading Spinner -->
     <div class="page-transition-loader">
         <div class="spinner">
@@ -264,8 +265,12 @@
         </div>
     </footer>
 
+    <!-- Mover Swiper al final, ANTES de consulting.js -->
     <script src="js/main.js"></script>
     <script src="js/loader.js"></script>
+    <!-- Swiper debe cargarse ANTES de consulting.js -->
+<!-- Reemplazar en ambas páginas -->
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/consulting.js"></script>
 
 </body>

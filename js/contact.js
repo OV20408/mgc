@@ -117,11 +117,7 @@ function validateForm(form) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Verificar configuración
-    console.log('Configuración EmailJS:');
-    console.log('- Public Key:', publicKey);
-    console.log('- Service ID:', SERVICE_ID);
-    console.log('- Template ID:', TEMPLATE_ID);
+
     
     if (SERVICE_ID === 'TU_SERVICE_ID_CORRECTO' || TEMPLATE_ID === 'TU_TEMPLATE_ID_CORRECTO') {
         console.error('⚠️ ADVERTENCIA: Debes configurar los IDs correctos del dashboard');
