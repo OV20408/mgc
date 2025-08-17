@@ -362,6 +362,7 @@ body {
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-bottom: -5rem;
 }
 
 .hero-control:hover {
@@ -372,6 +373,7 @@ body {
 .hero-indicators {
     display: flex;
     gap: 10px;
+    margin-top: 5rem;
 }
 
 .indicator {
@@ -425,6 +427,7 @@ body {
 
 .hero .btn {
     animation: fadeInUp 1s ease-out 0.6s both;
+    margin-bottom: 1.5rem;
 }
 
 /* Estilos para pantallas más pequeñas */
@@ -444,6 +447,7 @@ body {
     .indicator {
         width: 8px;
         height: 8px;
+        margin-top: 2rem;
     }
 
     .hero-subtitle-container {
@@ -919,11 +923,15 @@ body {
 
 
 .accordion-item {
-    margin-top: 2rem;
-    border-radius: 10px;
+    margin-bottom: 1rem;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 2rem 0;
+
 }
+
 
 .accordion-button {
     width: 100%;
@@ -975,6 +983,7 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     top: 0.1rem;
+    margin-left: 0.15rem;
 }
 
 .objectives-list {
@@ -1040,6 +1049,7 @@ body {
     background-color: rgba(17, 126, 167, 0.1);
     border-radius: 5px;
 }
+
 
 
 

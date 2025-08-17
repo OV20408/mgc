@@ -1191,6 +1191,7 @@
         justify-content: center;
         transition: all 0.3s ease;
     }
+    
 
     .close:hover {
         background: var(--dark-blue);
@@ -1671,15 +1672,6 @@
     overflow: hidden;
 }
 
-.accordion-item {
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    margin: 2rem 0;
-
-}
 
 
 .accordion-button {

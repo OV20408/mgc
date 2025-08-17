@@ -78,13 +78,13 @@
                 </p>
                 
                 <div class="clients-grid">
-                    <div class="client-card" onclick="openModal('petrobras-bolivia-modal')">
+                    <div class="client-card" onclick="openModal('ypfb-chaco')">
                         <img src="img/logoypfb.png" alt="Petrobras Bolivia">
                         <h3>YPFB Chaco S.A.</h3>
                         <p>Colaboración en gestión QHSE&RSE</p>
                     </div>
                     
-                    <div class="client-card" onclick="openModal('petrobras-argentina-modal')">
+                    <div class="client-card" onclick="openModal('sinopec-bolivia')">
                         <img src="img/logosinopec.png\" alt="Petrobras Argentina">
                         <h3>Sinopec</h3>
                         <p>Servicios de consultoría especializada</p>
@@ -97,121 +97,137 @@
     </main>
 
     <!-- Modales mejorados -->
-    <div id="petrobras-bolivia-modal" class="modal">
+
+    <div id="ypfb-chaco" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal('petrobras-bolivia-modal')">&times;</span>
+            <span class="close" onclick="closeModal('ypfb-chaco')">&times;</span>
             <div class="modal-body">
                 <div class="modal-info">
-                    <h2>Petrobras Bolivia</h2>
+                    <h2>YPFB Chaco S.A.</h2>
                     <div class="info-section">
-                        <strong>Descripción</strong>
-                        <p>Importante empresa petrolera brasileña con operaciones en Bolivia, líder en exploración y producción de hidrocarburos.</p>
+                        <strong>Descripción del Sector</strong>
+                        <p>YPFB Chaco S.A. es una importante empresa del Sector hidrocarburos, subsidiaria de YPFB, encargada de la exploración y explotación (E&P) de gas y petróleo.</p>
                     </div>
                     <div class="info-section">
-                        <strong>Servicios Prestados</strong>
+                        <strong>Servicio Prestado</strong>
                         <div class="tags-container">
-                            <span class="tag service-tag">Capacitación en QHSE</span>
-                            <span class="tag service-tag">Consultoría en Gestión de Riesgos</span>
-                            <span class="tag service-tag">Soporte en Relacionamiento Comunitario</span>
-                            <span class="tag service-tag">Desarrollo de Sistemas de Gestión Ambiental</span>
+                            <span class="tag service-tag">Manejo de Mercurio en Áreas Industriales</span>
                         </div>
+                        <p style="margin-top: 10px; font-size: 14px; color: #666;">
+                            Capacitación especializada relacionada a la presencia de Mercurio en actividades petroleras y el abordaje adecuado en aspectos normativos, cuidados operacionales y consideraciones HSE para minimizar su impacto y generar operaciones seguras.
+                        </p>
                     </div>
                     <div class="info-section">
                         <strong>Período de Colaboración</strong>
                         <div class="tags-container">
-                            <span class="tag duration-tag">+25 años de experiencia en el sector</span>
+                            <span class="tag duration-tag">Abril 2024 (16 Hrs)</span>
                         </div>
                     </div>
-                    <div class="info-section">
-                        <strong>Resultados</strong>
+                    <!-- <div class="info-section">
+                        <strong>Enfoque de la Capacitación</strong>
                         <div class="tags-container">
-                            <span class="tag result-tag">Mejora en indicadores de seguridad</span>
-                            <span class="tag result-tag">Implementación exitosa de programas de RSE</span>
-                            <span class="tag result-tag">Fortalecimiento del relacionamiento comunitario</span>
-                            <span class="tag result-tag">Optimización de procesos operativos</span>
+                            <span class="tag result-tag">Aspectos Normativos</span>
+                            <span class="tag result-tag">Cuidados Operacionales</span>
+                            <span class="tag result-tag">Consideraciones HSE</span>
+                            <span class="tag result-tag">Operaciones Seguras</span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="modal-gallery">
                     <div class="main-image" onclick="toggleZoom(this)">
-                        <img src="img/ambiental.jpeg" alt="Proyecto con Petrobras Bolivia" id="main-petrobras">
+                        <img src="img/ypfbimg1.png" alt="Proyecto con YPFB Chaco S.A." id="main-ypfb-chaco">
                     </div>
                     <div class="thumbnails">
-                        <div class="thumbnail active" onclick="changeImage('main-petrobras', 'img/balanced-scorecard.png', this)">
-                            <img src="img/balanced-scorecard.png" alt="Thumbnail 1">
+                        <div class="thumbnail active" onclick="changeImage('main-ypfb-chaco', 'img/ypfbimg1.png', this)">
+                            <img src="img/ypfbimg1.png" alt="Thumbnail 1">
                         </div>
-                        <div class="thumbnail" onclick="changeImage('main-petrobras', 'img/beneficios-csr2.png', this)">
-                            <img src="img/beneficios-csr2.png" alt="Thumbnail 2">
+                        <div class="thumbnail" onclick="changeImage('main-ypfb-chaco', 'img/ypfbimg2.png', this)">
+                            <img src="img/ypfbimg2.png" alt="Thumbnail 2">
                         </div>
-                        <div class="thumbnail" onclick="changeImage('main-petrobras', 'img/consulting-hero.png', this)">
-                            <img src="img/consulting-hero.png" alt="Thumbnail 3">
+                        <div class="thumbnail" onclick="changeImage('main-ypfb-chaco', 'img/ypfbimg3.png', this)">
+                            <img src="img/ypfbimg3.png" alt="Thumbnail 3">
                         </div>
-                        <div class="thumbnail" onclick="changeImage('main-petrobras', 'img/hero-renewable.png', this)">
-                            <img src="img/hero-renewable.png" alt="Thumbnail 4">
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-
-    <div id="petrobras-argentina-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('petrobras-argentina-modal')">&times;</span>
-            <div class="modal-body">
-                <div class="modal-info">
-                    <h2>Petrobras Argentina</h2>
-                    <div class="info-section">
-                        <strong>Descripción</strong>
-                        <p>Filial argentina de Petrobras con importantes operaciones en el país, especializada en refinación y comercialización de derivados del petróleo.</p>
-                    </div>
-                    <div class="info-section">
-                        <strong>Servicios Prestados</strong>
-                        <div class="tags-container">
-                            <span class="tag service-tag">Consultoría en Gobierno Corporativo</span>
-                            <span class="tag service-tag">Gestión de Proyectos PMI</span>
-                            <span class="tag service-tag">Capacitación en Normas ISO</span>
-                        </div>
-                    </div>
-                    <div class="info-section">
-                        <strong>Período de Colaboración</strong>
-                        <div class="tags-container">
-                            <span class="tag duration-tag">Colaboración estratégica</span>
-                        </div>
-                    </div>
-                    <div class="info-section">
-                        <strong>Resultados</strong>
-                        <div class="tags-container">
-                            <span class="tag result-tag">Optimización de procesos operativos</span>
-                            <span class="tag result-tag">Mejora en gestión de proyectos</span>
-                            <span class="tag result-tag">Fortalecimiento de gobierno corporativo</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-gallery">
-                    <div class="main-image" onclick="toggleZoom(this)">
-                        <img src="img/calidad.png" alt="Proyecto con Petrobras Argentina" id="main-petrobras-arg">
-                    </div>
-                    <div class="thumbnails">
-                        <div class="thumbnail active" onclick="changeImage('main-petrobras-arg', 'img/project2.jpg', this)">
-                            <img src="img/project2.jpg" alt="Thumbnail 1">
-                        </div>
-                        <div class="thumbnail" onclick="changeImage('main-petrobras-arg', 'img/project3.jpg', this)">
-                            <img src="img/project3.jpg" alt="Thumbnail 2">
-                        </div>
-                        <div class="thumbnail" onclick="changeImage('main-petrobras-arg', 'img/project4.jpg', this)">
-                            <img src="img/project4.jpg" alt="Thumbnail 3">
-                        </div>
-                        <div class="thumbnail" onclick="changeImage('main-petrobras-arg', 'img/project1.jpg', this)">
-                            <img src="img/project1.jpg" alt="Thumbnail 4">
+                        <div class="thumbnail" onclick="changeImage('main-ypfb-chaco', 'img/ypfbimg4.png', this)">
+                            <img src="img/ypfbimg4.png" alt="Thumbnail 4">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+    
+    <div id="sinopec-bolivia" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sinopec-bolivia')">&times;</span>
+            <div class="modal-body">
+                <div class="modal-info">
+                    <h2>Sinopec International Petroleum Service Ecuador S.A.</h2>
+                    <p style="font-size: 16px; color: #0066cc; margin-bottom: 15px;">(Sucursal Bolivia)</p>
+                    <div class="info-section">
+                        <strong>Descripción del Sector</strong>
+                        <p>Importante empresa del Sector hidrocarburos, encargada de servicios de operación y mantenimiento de equipos de perforación, terminación y workover para YPFB.</p>
+                    </div>
+                    <div class="info-section">
+                        <strong>Servicio Prestado</strong>
+                        <div class="tags-container">
+                            <span class="tag service-tag">Contrato Marco para Capacitación, Consultoría y Monitoreos en QHSE</span>
+                        </div>
+                        <p style="margin-top: 10px; font-size: 14px; color: #666;">
+                            Desarrollo de capacitaciones especializadas en SySO, conforme legislación vigente, Normas Técnicas aplicables a actividades de Exploración y Producción (E&P), requisitos y lineamientos establecidos por la empresa Operadora.
+                        </p>
+                    </div>
+                    <div class="info-section">
+                        <strong>Período de Colaboración</strong>
+                        <div class="tags-container">
+                            <span class="tag duration-tag">Agosto 2024 - Vigente a la fecha</span>
+                        </div>
+                    </div>
+                    <!-- <div class="info-section">
+                        <strong>Objetivos del Programa</strong>
+                        <div class="tags-container">
+                            <span class="tag result-tag">Entorno Laboral Seguro</span>
+                            <span class="tag result-tag">Minimizar Impactos Ambientales</span>
+                            <span class="tag result-tag">Preservar Vida e Integridad Física</span>
+                            <span class="tag result-tag">Cumplimiento Normativo</span>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <strong>Áreas de Especialización</strong>
+                        <div class="tags-container">
+                            <span class="tag service-tag">Seguridad y Salud Ocupacional</span>
+                            <span class="tag service-tag">Exploración y Producción (E&P)</span>
+                            <span class="tag service-tag">Normas Técnicas Aplicables</span>
+                            <span class="tag service-tag">Legislación Vigente</span>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="modal-gallery">
+                    <div class="main-image" onclick="toggleZoom(this)">
+                        <img src="img/sinpecimg1.png" alt="Proyecto con Sinopec International" id="main-sinopec">
+                    </div>
+                    <div class="thumbnails">
+                        <div class="thumbnail active" onclick="changeImage('main-sinopec', 'img/sinpecimg1.png', this)">
+                            <img src="img/sinpecimg1.png" alt="Thumbnail 1">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('main-sinopec', 'img/sinpecimg2.png', this)">
+                            <img src="img/sinpecimg2.png" alt="Thumbnail 2">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('main-sinopec', 'img/sinpecimg3.png', this)">
+                            <img src="img/sinpecimg3.png" alt="Thumbnail 3">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('main-sinopec', 'img/sinpecimg4.png', this)">
+                            <img src="img/sinpecimg4.png" alt="Thumbnail 4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <div id="ypfb-andina-modal" class="modal">
         <div class="modal-content">
