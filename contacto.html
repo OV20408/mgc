@@ -20,15 +20,6 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init({
-                publicKey: "KmamiCc6sWkpv5wli",
-            });
-        })();
-</script>
-
 </head>
 <body>
     <header class="header">
@@ -87,26 +78,29 @@
                     <!-- Reemplazar esta sección del formulario -->
                     <div class="contact-form">
                         <h3>Envíanos un mensaje</h3>
-                        <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <form id="contactForm" >
                             <div class="form-group">
                                 <label for="nombre_completo">Nombre Completo *</label>
-                                <input type="text" id="nombre_completo" name="nombre_completo" required>
+                                <input type="text" id="nombre_completo" name="nombre_completo" placeholder="Mateo Escobar" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Correo Electrónico *</label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" placeholder="pablo@gmail.com" required>
                             </div>
                             <div class="form-group">
                                 <label for="telefono">Teléfono</label>
-                                <input type="tel" id="telefono" name="telefono">
+                                <input type="tel" id="telefono" name="telefono" pattern="[0-9]{7,12}" 
+                                title="Ingrese solo números, entre 7 y 12 dígitos" 
+                                placeholder="Ej: 12345678"
+                                maxlength="12">
                             </div>
                             <div class="form-group">
                                 <label for="asunto">Asunto *</label>
-                                <input type="text" id="asunto" name="asunto" required>
+                                <input type="text" id="asunto" name="asunto" placeholder="Nombre del Asunto" required>
                             </div>
                             <div class="form-group">
                                 <label for="mensaje">Mensaje *</label>
-                                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                                <textarea id="mensaje" name="mensaje" rows="5" required maxlength="1000" placeholder="Escriba un Mensaje"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
                         </form>
