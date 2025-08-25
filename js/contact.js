@@ -207,7 +207,7 @@ function handleSubmit(event) {
                 // Continuar sin localStorage
             }
             
-            alert('¡Mensaje enviado exitosamente! Nos pondremos en contacto contigo pronto.');
+
             form.reset();
             
             // Restaurar botón
