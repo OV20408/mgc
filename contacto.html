@@ -91,11 +91,19 @@
                             </div>
                             <div class="form-group">
                                 <label for="telefono">Teléfono</label>
-                                <input type="tel" id="telefono" name="telefono" pattern="[0-9]{7,12}" 
-                                title="Ingrese solo números, entre 7 y 12 dígitos" 
-                                placeholder="Ej: 12345678"
-                                maxlength="12">
-                            </div>
+                                <input type="tel" id="telefono" name="telefono" pattern="[0-9]{7,12}"
+                                        title="Ingrese solo números, entre 7 y 12 dígitos"
+                                        placeholder="Ej: 12345678"
+                                        maxlength="12">
+                                <p id="error-msg" class="field-msg error" style="display:none;" aria-live="polite">
+                                    Ingresa solo números (7 a 12 dígitos).
+                                </p>
+                                <p id="success-msg" class="field-msg success" style="display:none;" aria-live="polite">
+                                    Teléfono válido.
+                                </p>
+                                </div>
+
+                            
                             <div class="form-group">
                                 <label for="asunto">Asunto *</label>
                                 <input type="text" id="asunto" name="asunto" placeholder="Nombre del Asunto" required>
@@ -169,6 +177,30 @@
             </div>
         </section>
     </main>
+
+    <!-- Modal de éxito -->
+    <div id="modal-contacto-success" class="modal-overlay">
+        <div class="modal-contacto">
+            <div class="modal-icon success">
+                <div class="check-icon"></div>
+            </div>
+            <h3>¡Mensaje Enviado!</h3>
+            <p>Tu mensaje ha sido enviado exitosamente. Nos pondremos en contacto contigo pronto.</p>
+        </div>
+    </div>
+    
+
+    <!-- Modal de error -->
+    <div id="modal-contacto-error" class="modal-overlay">
+        <div class="modal-contacto">
+            <div class="modal-icon error">
+                <div class="x-icon"></div>
+            </div>
+            <h3>Error al Enviar</h3>
+            <p>Hubo un problema al enviar tu mensaje. Por favor, verifica los datos e intenta nuevamente.</p>
+        </div>
+    </div>
+
 
     <footer class="footer">
         <div class="container">

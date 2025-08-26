@@ -3,6 +3,7 @@
     --light-blue: #1CACE2;
     --dark-blue: #002362;
     --light-gray: #BABDBE;
+    --error-red: #e53935;      /* error */
     --green: #00AF52;
     --blue-accent: #00AFEE;
     --white: #ffffff;
@@ -260,6 +261,17 @@ body {
     color: var(--white);
     transform: translateY(-2px);
 }
+
+
+
+.field-msg { margin: .25rem 0 0; font-size: .875rem; }
+.field-msg.error { color: #b42318; }
+.field-msg.success { color: #027a48; }
+
+
+
+
+
 
 
 
@@ -1362,3 +1374,213 @@ body {
     max-width: 200px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   MODALES DE CONTACTO (ESPECÍFICOS)
+   ========================= */
+
+        /* MODALES - ESTILOS CORREGIDOS */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 35, 98, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-contacto {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px 30px;
+            max-width: 450px;
+            width: min(90%, 450px);
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: scale(0.85);
+            transition: transform 0.3s ease;
+            margin: 20px;
+            position: relative;
+            z-index: 10001;
+        }
+
+        .modal-overlay.show .modal-contacto {
+            transform: scale(1);
+        }
+
+        .modal-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 40px;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modal-icon.success {
+            background: #27ae60;
+        }
+
+        .modal-icon.error {
+            background: #e74c3c;
+        }
+
+        
+        /* Estilo general para los iconos */
+        .check-icon, .x-icon {
+        width: 45px;
+        height: 45px;
+        position: relative;
+        display: grid;
+        place-items: center; /* Centra los elementos dentro del icono */
+        }
+
+        .check-icon::before, .check-icon::after, .x-icon::before, .x-icon::after {
+        content: "";
+        position: absolute;
+        background: #fff;
+        border-radius: 3px;
+        transition: transform 0.3s ease;
+        }
+
+        /* Para el Check */
+        .check-icon::before {
+        width: 6px;
+        height: 28px;
+        top: 8px;
+        left: 22px;
+        transform: rotate(45deg) scaleY(1); /* Ajusta la escala para que el ícono se vea bien */
+        }
+
+        .check-icon::after {
+        width: 6px;
+        height: 16px;
+        top: 22px;
+        left: 10px;
+        transform: rotate(-45deg) scaleY(1); /* Ajusta la escala para el segundo trazo */
+        }
+
+        /* Para la X */
+        .x-icon::before {
+        width: 6px;
+        height: 28px;
+        top: 8px;
+        left: 10px;
+        transform: rotate(45deg);
+        }
+
+        .x-icon::after {
+        width: 6px;
+        height: 28px;
+        top: 8px;
+        left: 10px;
+        transform: rotate(-45deg);
+        }
+
+
+
+
+        @keyframes x-line1 {
+            0% { transform: rotate(45deg) scaleY(0); }
+            100% { transform: rotate(45deg) scaleY(1); }
+        }
+
+        @keyframes x-line2 {
+            0% { transform: rotate(-45deg) scaleY(0); }
+            100% { transform: rotate(-45deg) scaleY(1); }
+        }
+
+        .modal-contacto h3 {
+            color: #2c3e50;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            animation: fadeInUp 0.4s ease-out 0.6s both;
+        }
+
+        .modal-contacto p {
+            color: #7f8c8d;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            animation: fadeInUp 0.4s ease-out 0.8s both;
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-close {
+            background: #3498db;
+            color: #fff;
+            border: 0;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            animation: fadeInUp 0.4s ease-out 1s both;
+        }
+
+        .modal-close:hover {
+            background: #2980b9;
+        }
+
+        .modal-close.error {
+            background: #e74c3c;
+        }
+
+        .modal-close.error:hover {
+            background: #c0392b;
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        
