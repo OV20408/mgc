@@ -96,6 +96,13 @@
     background-color: var(--primary-blue);
 }
 
+.profile-content h3{
+    font-size: 1.2rem;
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+}
+
+
 .profile-content p {
     font-size: 1.2rem;
     line-height: 1.8;
@@ -197,6 +204,11 @@ textarea {
     .page-hero h1 {
         font-size: 2rem; 
     }
+
+    .profile-content h3 {
+        font-size: 1.15rem;
+    }
+
     
     .profile-wrapper {
         flex-direction: column; /* Apilar elementos verticalmente */
@@ -246,6 +258,13 @@ textarea {
     .profile-content h2 {
         font-size: 1.8rem; /* Títulos más pequeños */
     }
+
+    .profile-content h3 {
+        font-size: 1.1rem;
+    }
+
+
+
     
     .profile-content p {
         font-size: 1.1rem; /* Texto más legible */
@@ -1738,6 +1757,32 @@ textarea {
     padding: 0 1.5rem 1.5rem;
     color: #555;
     line-height: 1.7;
+}
+
+.accordion-content a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.accordion-content a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-blue);
+    transition: width 0.3s ease;
+}
+
+.accordion-content a:hover::after {
+    width: 100%;
+}
+
+.accordion-content a:hover {
+    color: var(--dark-blue);
 }
 
 
