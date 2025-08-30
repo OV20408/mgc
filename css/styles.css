@@ -764,7 +764,7 @@ body {
 .footer {
     background-color: var(--dark-blue);
     color: var(--white);
-    padding: 3rem 0 1rem;
+    padding: 2rem 0 1rem;
 }
 
 .footer-content {
@@ -1304,9 +1304,10 @@ body {
 
 
     .nav-menu.active {
-        transform: translateX(0);
+        transform: translateX(0) !important;
     }
 
+    
     .dropdown-menu {
         position: static;
         opacity: 1;
@@ -1570,13 +1571,13 @@ body {
                 grid-template-columns: 1fr;
             }
             
-            .nav-menu {
+            /* .nav-menu {
                 display: none;
             }
             
             .hamburger {
                 display: flex;
-            }
+            } */
             
             .footer-content {
                 grid-template-columns: 1fr;
