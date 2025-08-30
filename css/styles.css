@@ -1455,7 +1455,7 @@ body {
         /* Estilo general para los iconos */
         
         .check-icon, .x-icon {
-        width: 45px;
+        width: 28px;
         height: 45px;
         position: relative;
         display: grid;
@@ -1470,22 +1470,24 @@ body {
         transition: transform 0.3s ease;
         }
 
-        /* Para el Check */
-        .check-icon::before {
-        width: 6px;
-        height: 28px;
-        top: 8px;
-        left: 22px;
-        transform: rotate(45deg) scaleY(1); /* Ajusta la escala para que el ícono se vea bien */
-        }
+/* Para mover el check completo hacia la izquierda */
+/* Para mover el check completo hacia la izquierda */
+/* Para mover el check completo hacia la izquierda */
+.check-icon::before {
+   width: 6px;
+   height: 28px;
+   top: 8px;
+   left: 17px;  /* Reducido de 19px a 17px */
+   transform: rotate(45deg) scaleY(1);
+}
 
-        .check-icon::after {
-        width: 6px;
-        height: 16px;
-        top: 22px;
-        left: 10px;
-        transform: rotate(-45deg) scaleY(1); /* Ajusta la escala para el segundo trazo */
-        }
+.check-icon::after {
+   width: 6px;
+   height: 16px;
+   top: 22px;
+   left: 3px;   /* Reducido de 5px a 3px */
+   transform: rotate(-45deg) scaleY(1);
+}
 
         /* Para la X */
         .x-icon::before {
