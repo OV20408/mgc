@@ -14,13 +14,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Bloquear/desbloquear scroll del body cuando hay modal abierto
-  function lockBodyScroll()   { document.body.classList.add('modal-open'); }
+  // CORREGIDO: Funciones para bloquear/desbloquear scroll del body
+  function lockBodyScroll() { 
+    document.body.classList.add('modal-open'); 
+  }
+  
+  function unlockBodyScroll() { 
+    document.body.classList.remove('modal-open'); 
+  }
 
   // --- Referencias formulario
   const form = $('#contactForm');
   const telefonoInput = $('#telefono');
-  const errorMsg   = $('#error-msg');
+  const errorMsg = $('#error-msg');
   const successMsg = $('#success-msg');
 
   // --- Validación teléfono (mantengo tu lógica)
@@ -86,77 +92,71 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // --- Modales (éxito / error)
-const successOverlay = $('#modal-contacto-success');
-const errorOverlay   = $('#modal-contacto-error');
+  // --- Modales (éxito / error) - CORREGIDO
+  const successOverlay = $('#modal-contacto-success');
+  const errorOverlay = $('#modal-contacto-error');
 
-function showSuccessModal() {
-  console.log("Showing success modal...");
-  hideLoader();
-  if (!successOverlay) return;
-  successOverlay.classList.add('show');
-  lockBodyScroll();
-  setTimeout(hideSuccessModal, 3000);
-}
+  function showSuccessModal() {
+    console.log("Showing success modal...");
+    hideLoader();
+    if (!successOverlay) return;
+    successOverlay.classList.add('show');
+    lockBodyScroll(); // Bloquear scroll
+    setTimeout(hideSuccessModal, 3000); // Auto-cierre en 3 segundos
+  }
 
-function showErrorModal() {
-  console.log("Showing error modal...");
-  hideLoader();
-  if (!errorOverlay) return;
-  errorOverlay.classList.add('show');
-  lockBodyScroll();
-  setTimeout(hideErrorModal, 3000);
-}
+  function showErrorModal() {
+    console.log("Showing error modal...");
+    hideLoader();
+    if (!errorOverlay) return;
+    errorOverlay.classList.add('show');
+    lockBodyScroll(); // Bloquear scroll
+    setTimeout(hideErrorModal, 3000); // Auto-cierre en 3 segundos
+  }
 
+  function hideSuccessModal() {
+    if (!successOverlay) return;
+    successOverlay.classList.remove('show');
+    unlockBodyScroll(); // CORREGIDO: Desbloquear scroll
+  }
 
+  function hideErrorModal() {
+    if (!errorOverlay) return;
+    errorOverlay.classList.remove('show');
+    unlockBodyScroll(); // CORREGIDO: Desbloquear scroll
+  }
 
-
-function hideSuccessModal() {
-  if (!successOverlay) return;
-  successOverlay.classList.remove('show');
-}
-
-
-
-function hideErrorModal() {
-  if (!errorOverlay) return;
-  errorOverlay.classList.remove('show');
-}
-
-// Cerrar clickeando el overlay
-if (successOverlay) {
-  successOverlay.addEventListener('click', (e) => {
-    if (e.target === successOverlay) hideSuccessModal();
-  });
-}
-if (errorOverlay) {
-  errorOverlay.addEventListener('click', (e) => {
-    if (e.target === errorOverlay) hideErrorModal();
-  });
-}
-
-
+  // CORREGIDO: Remover código duplicado y mejorar eventos
   // Cerrar clickeando el overlay
   if (successOverlay) {
     successOverlay.addEventListener('click', (e) => {
-      if (e.target === successOverlay) hideSuccessModal();
+      if (e.target === successOverlay) {
+        hideSuccessModal();
+      }
     });
   }
+  
   if (errorOverlay) {
     errorOverlay.addEventListener('click', (e) => {
-      if (e.target === errorOverlay) hideErrorModal();
+      if (e.target === errorOverlay) {
+        hideErrorModal();
+      }
     });
   }
 
   // Cerrar con Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      hideSuccessModal();
-      hideErrorModal();
+      if (successOverlay && successOverlay.classList.contains('show')) {
+        hideSuccessModal();
+      }
+      if (errorOverlay && errorOverlay.classList.contains('show')) {
+        hideErrorModal();
+      }
     }
   });
 
-  // --- Envío del formulario (mantengo tu fetch)
+  // --- Envío del formulario
   async function handleSubmit(event) {
     event.preventDefault();
     if (!form) return;
@@ -190,9 +190,16 @@ if (errorOverlay) {
       // Éxito
       showSuccessModal();
       form.reset();
+      
+      // CORREGIDO: Resetear también los estados de validación del teléfono
+      if (telefonoInput) {
+        telefonoInput.classList.remove('valid', 'invalid');
+      }
+      if (errorMsg) errorMsg.style.display = 'none';
+      if (successMsg) successMsg.style.display = 'none';
+      
     } catch (err) {
       console.error('FAILED...', err);
-      // Error
       showErrorModal();
     } finally {
       if (submitButton) {
