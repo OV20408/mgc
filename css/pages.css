@@ -162,6 +162,13 @@
     object-fit: contain;
 }
 
+
+/* Opción 3: Selector más específico usando el alt de la imagen */
+.profile-image-card img[alt="Medio Ambiente"] {
+    height: 280px !important;
+    object-fit: fill;
+}
+
 @media (max-width: 768px) {
     .profile-image-card .smaller-image {
         height: 75%;
