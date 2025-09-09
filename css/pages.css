@@ -169,6 +169,13 @@
     object-fit: fill;
 }
 
+/*REVISAR*/
+.profile-image-card img[alt="Responsabilidad Social Empresarial"] {
+    height: 280px !important;
+    object-fit: fill;
+}
+
+
 @media (max-width: 768px) {
     .profile-image-card .smaller-image {
         height: 75%;
